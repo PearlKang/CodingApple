@@ -1,5 +1,6 @@
 <template>
   <div>
+    test input
     <img alt="Vue logo" src="./assets/logo.png" />
     <div>
       <h4 class="red" :style="스타일">{{ products[0] }}</h4>
