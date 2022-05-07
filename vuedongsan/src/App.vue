@@ -1,16 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <div>
-    <h4 class="red" :style="스타일">{{ products[0] }}</h4>
-    <p>{{ price1 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[1] }}</h4>
-    <p>{{ price2 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[2] }}</h4>
-    <p>{{ price3 }} 만원</p>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <div>
+      <h4 class="red" :style="스타일">{{ products[0] }}</h4>
+      <p>{{ price1 }} 만원</p>
+    </div>
+    <div>
+      <h4>{{ products[1] }}</h4>
+      <p>{{ price2 }} 만원</p>
+    </div>
+    <div>
+      <h4>{{ products[2] }}</h4>
+      <p>{{ price3 }} 만원</p>
+    </div>
   </div>
 </template>
 
