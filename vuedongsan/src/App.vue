@@ -7,9 +7,6 @@
       <h4>{{ products[i] }}</h4>
       <p>{{ prices[i] }} 만원</p>
       <button @click="reports[i]++">허위매물신고</button>
-      <!-- <button @mouseover="reports[i]++">허위매물신고</button> -->
-      <!-- <button @click="reports[i]++">허위매물신고</button> -->
-      <!-- <button v-on:click="">허위매물신고</button> <span>신고수 : 0</span> -->
       <span>신고수 : {{ reports[i] }}</span>
     </div>
   </div>
