@@ -6,6 +6,11 @@
     <div v-for="(a, i) in 3" :key="i">
       <h4>{{ products[i] }}</h4>
       <p>{{ prices[i] }} 만원</p>
+      <button @click="reports[i]++">허위매물신고</button>
+      <!-- <button @mouseover="reports[i]++">허위매물신고</button> -->
+      <!-- <button @click="reports[i]++">허위매물신고</button> -->
+      <!-- <button v-on:click="">허위매물신고</button> <span>신고수 : 0</span> -->
+      <span>신고수 : {{ reports[i] }}</span>
     </div>
   </div>
 </template>
@@ -18,8 +23,10 @@ export default {
       menus: ["Home", "Shop", "About"],
       prices: [80, 70, "아무거나"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
+      reports: [0, 0, 0],
     };
   },
+  methods: {},
   components: {},
 };
 </script>
