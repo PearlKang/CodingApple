@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="menu">
-      <a v-for="a in 메뉴들" :key="a">{{ a }}</a>
+      <a v-for="(a, i) in 메뉴들" :key="i">{{ i }}</a>
     </div>
     <img alt="Vue logo" src="./assets/logo.png" />
     <div>
