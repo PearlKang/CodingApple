@@ -16,7 +16,7 @@
 
     <!-- main lists -->
     <div v-for="(a, i) in 3" :key="i">
-      <img src="./assets/room0.jpg" class="room-img" />
+      <img :src="roomImgUrl(i)" class="room-img" />
       <h4 @click="modalStatus = true">{{ products[i] }}</h4>
       <p>{{ prices[i] }} 만원</p>
       <button @click="reports[i]++">허위매물신고</button>
@@ -40,6 +40,9 @@ export default {
   methods: {
     increase() {
       this.reports++;
+    },
+    roomImgUrl(input) {
+      return require("./assets/room" + input + ".jpg");
     },
   },
   components: {},
