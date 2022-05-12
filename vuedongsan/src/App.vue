@@ -15,21 +15,22 @@
     </div>
 
     <!-- main lists -->
-    <div v-for="(a, i) in 3" :key="i">
-      <img :src="roomImgUrl(i)" class="room-img" />
-      <h4 @click="modalStatus = true">{{ products[i] }}</h4>
-      <p>{{ prices[i] }} 만원</p>
-      <button @click="reports[i]++">허위매물신고</button>
-      <span> 신고수 : {{ reports[i] }}</span>
+    <div v-for="(a, i) in onerooms.length" :key="i">
+      <img :src="onerooms[i].image" class="room-img" />
+      <h4 @click="modalStatus = true">{{ onerooms[i].title }}</h4>
+      <p>{{ onerooms[i].price }} 원</p>
     </div>
   </div>
 </template>
 
 <script>
+import data from "./data/oneroom";
+
 export default {
   name: "App",
   data() {
     return {
+      onerooms: data,
       menus: ["Home", "Shop", "About"],
       prices: [80, 70, "아무거나"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
