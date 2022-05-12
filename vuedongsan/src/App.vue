@@ -20,7 +20,7 @@
       <h4 @click="modalStatus = true">{{ products[i] }}</h4>
       <p>{{ prices[i] }} 만원</p>
       <button @click="reports[i]++">허위매물신고</button>
-      <span>신고수 : {{ reports[i] }}</span>
+      <span> 신고수 : {{ reports[i] }}</span>
     </div>
   </div>
 </template>
