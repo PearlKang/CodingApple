@@ -14,11 +14,11 @@
       <a v-for="i in menus" :key="i">{{ i }}</a>
     </div>
 
-    <!-- main lists -->
-    <div v-for="(a, i) in onerooms.length" :key="i">
-      <img :src="onerooms[i].image" class="room-img" />
-      <h4 @click="modalStatus = true">{{ onerooms[i].title }}</h4>
-      <p>{{ onerooms[i].price }} 원</p>
+    <!-- main item lists -->
+    <div v-for="(a, i) in data.length" :key="i">
+      <img :src="data[i].image" class="room-img" />
+      <h4 @click="modalStatus = true">{{ data[i].title }}</h4>
+      <p>{{ data[i].price }} 원</p>
     </div>
   </div>
 </template>
@@ -30,22 +30,12 @@ export default {
   name: "App",
   data() {
     return {
-      onerooms: data,
+      data,
       menus: ["Home", "Shop", "About"],
-      prices: [80, 70, "아무거나"],
-      products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
-      reports: [0, 0, 0],
       modalStatus: false,
     };
   },
-  methods: {
-    increase() {
-      this.reports++;
-    },
-    roomImgUrl(input) {
-      return require("./assets/room" + input + ".jpg");
-    },
-  },
+  methods: {},
   components: {},
 };
 </script>
