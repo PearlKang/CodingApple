@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import data from "./data/oneroom";
+import data from "./data/data";
 
 export default {
   name: "App",
