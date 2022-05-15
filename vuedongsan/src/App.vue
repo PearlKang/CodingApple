@@ -3,7 +3,7 @@
     <!-- modal -->
     <div class="black-bg" v-if="modalStatus">
       <div class="white-bg">
-        <h4>상세페이지</h4>
+        <h4>{{ data[selectItem].title }}</h4>
         <p>상세페이지 내용</p>
         <button @click="modalStatus = false">닫기</button>
       </div>
@@ -11,14 +11,18 @@
 
     <!-- top nav -->
     <div class="menu">
-      <a v-for="i in menus" :key="i">{{ i }}</a>
+      <a v-for="a in menus" :key="a">{{ a }}</a>
     </div>
 
     <!-- main item lists -->
-    <div v-for="(a, i) in data.length" :key="i">
-      <img :src="data[i].image" class="room-img" />
-      <h4 @click="modalStatus = true">{{ data[i].title }}</h4>
-      <p>{{ data[i].price }} 원</p>
+    <div
+      @click="(modalStatus = true), (selectItem = i)"
+      v-for="(a, i) in data"
+      :key="i"
+    >
+      <img :src="a.image" class="room-img" />
+      <h4>{{ a.title }}</h4>
+      <p>{{ a.price }} 원</p>
     </div>
   </div>
 </template>
@@ -33,6 +37,7 @@ export default {
       data,
       menus: ["Home", "Shop", "About"],
       modalStatus: false,
+      selectItem: 0,
     };
   },
   methods: {},
