@@ -1,10 +1,16 @@
 <template>
   <div>
+    <div v-if="1 == 2">안녕1</div>
+    <div v-else-if="1 == 3">안녕2</div>
+    <div v-else>안녕3</div>
+
     <!-- modal -->
     <div class="black-bg" v-if="modalStatus">
       <div class="white-bg">
         <h4>{{ data[selectItem].title }}</h4>
-        <p>상세페이지 내용</p>
+        <p>{{ data[selectItem].content }}</p>
+        <img :src="data[selectItem].image" class="room-img-madal" />
+        <p>{{ data[selectItem].price }}</p>
         <button @click="modalStatus = false">닫기</button>
       </div>
     </div>
@@ -16,7 +22,10 @@
 
     <!-- main item lists -->
     <div
-      @click="(modalStatus = true), (selectItem = i)"
+      @click="
+        modalStatus = true;
+        selectItem = i;
+      "
       v-for="(a, i) in data"
       :key="i"
     >
@@ -90,6 +99,11 @@ div {
 
 .room-img {
   width: 100%;
+  margin-top: 40px;
+}
+
+.room-img-madal {
+  width: 50%;
   margin-top: 40px;
 }
 </style>
