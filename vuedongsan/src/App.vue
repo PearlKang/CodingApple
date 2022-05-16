@@ -1,16 +1,12 @@
 <template>
   <div>
-    <div v-if="1 == 2">안녕1</div>
-    <div v-else-if="1 == 3">안녕2</div>
-    <div v-else>안녕3</div>
-
     <!-- modal -->
     <div class="black-bg" v-if="modalStatus">
       <div class="white-bg">
+        <img :src="data[selectItem].image" class="room-img-madal" />
         <h4>{{ data[selectItem].title }}</h4>
         <p>{{ data[selectItem].content }}</p>
-        <img :src="data[selectItem].image" class="room-img-madal" />
-        <p>{{ data[selectItem].price }}</p>
+        <p>{{ data[selectItem].price }} 원</p>
         <button @click="modalStatus = false">닫기</button>
       </div>
     </div>
@@ -19,6 +15,9 @@
     <div class="menu">
       <a v-for="a in menus" :key="a">{{ a }}</a>
     </div>
+
+    <!-- banner -->
+    <Discount></Discount>
 
     <!-- main item lists -->
     <div
@@ -38,6 +37,7 @@
 
 <script>
 import data from "./data/data";
+import Discount from "./Discount.vue";
 
 export default {
   name: "App",
@@ -50,7 +50,7 @@ export default {
     };
   },
   methods: {},
-  components: {},
+  components: { Discount: Discount },
 };
 </script>
 
