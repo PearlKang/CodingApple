@@ -17,7 +17,7 @@
     </div>
 
     <!-- banner -->
-    <Discount></Discount>
+    <Discount />
 
     <!-- main item lists -->
     <div
@@ -50,7 +50,7 @@ export default {
     };
   },
   methods: {},
-  components: { Discount: Discount },
+  components: { Discount },
 };
 </script>
 
