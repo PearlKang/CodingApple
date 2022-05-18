@@ -11,7 +11,8 @@
       </div>
     </div> -->
 
-    <Modal />
+    <!-- <Modal v-bind:/> -->
+    <Modal :data="data" :selectItem="selectItem" :modalStatus="modalStatus" />
 
     <!-- top nav -->
     <div class="menu">
