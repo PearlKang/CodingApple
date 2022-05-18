@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- modal -->
-    <div class="black-bg" v-if="modalStatus">
+    <!-- <div class="black-bg" v-if="modalStatus">
       <div class="white-bg">
         <img :src="data[selectItem].image" class="room-img-madal" />
         <h4>{{ data[selectItem].title }}</h4>
@@ -9,7 +9,9 @@
         <p>{{ data[selectItem].price }} 원</p>
         <button @click="modalStatus = false">닫기</button>
       </div>
-    </div>
+    </div> -->
+
+    <Modal />
 
     <!-- top nav -->
     <div class="menu">
@@ -38,6 +40,7 @@
 <script>
 import data from "./data/data";
 import Discount from "./Discount.vue";
+import Modal from "./Modal.vue";
 
 export default {
   name: "App",
@@ -50,7 +53,7 @@ export default {
     };
   },
   methods: {},
-  components: { Discount },
+  components: { Discount, Modal },
 };
 </script>
 
