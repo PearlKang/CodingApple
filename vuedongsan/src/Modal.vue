@@ -6,6 +6,7 @@
         <h4>{{ data[selectItem].title }}</h4>
         <p>{{ data[selectItem].content }}</p>
         <p>{{ data[selectItem].price }} 원</p>
+        <!-- <button @click="modalStatus = false">닫기</button> -->
       </div>
     </div>
   </div>
