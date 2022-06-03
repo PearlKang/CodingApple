@@ -29,8 +29,8 @@
 
 <script>
 import data from "./data/data";
-import Discount from "./Discount.vue";
-import Modal from "./Modal.vue";
+import Discount from "./Discount";
+import Modal from "./Modal";
 
 export default {
   name: "App",
