@@ -12,18 +12,13 @@
     <Discount />
 
     <!-- main item lists -->
-    <div
-      @click="
-        modalStatus = true;
-        selectItem = i;
-      "
+    <Card
       v-for="(a, i) in data"
       :key="i"
-    >
-      <img :src="a.image" class="room-img" />
-      <h4>{{ a.title }}</h4>
-      <p>{{ a.price }} 원</p>
-    </div>
+      :data="a"
+      :selectItem="selectItem"
+      :modalStatus="modalStatus"
+    />
   </div>
 </template>
 
@@ -31,6 +26,7 @@
 import data from "./data/data";
 import Discount from "./Discount";
 import Modal from "./Modal";
+import Card from "./Card";
 
 export default {
   name: "App",
@@ -43,7 +39,7 @@ export default {
     };
   },
   methods: {},
-  components: { Discount, Modal },
+  components: { Discount, Modal, Card },
 };
 </script>
 
