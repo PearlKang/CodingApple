@@ -10,7 +10,7 @@
 export default {
   name: "Card",
   props: {
-    data: Array,
+    data: Object,
     selectItem: Number,
     modalStatus: Boolean,
   },
