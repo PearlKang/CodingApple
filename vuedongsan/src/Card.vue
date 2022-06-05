@@ -11,8 +11,6 @@ export default {
   name: "Card",
   props: {
     data: Object,
-    selectItem: Number,
-    modalStatus: Boolean,
   },
   methods: {
     clickOpenModal() {

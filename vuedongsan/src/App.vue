@@ -1,7 +1,12 @@
 <template>
   <div>
     <!-- modal -->
-    <Modal :data="data" :selectItem="selectItem" :modalStatus="modalStatus" />
+    <Modal
+      @closeModal="modalStatus = false"
+      :data="data"
+      :selectItem="selectItem"
+      :modalStatus="modalStatus"
+    />
 
     <!-- top nav -->
     <div class="menu">
@@ -15,13 +20,11 @@
     <Card
       @openModal="
         modalStatus = true;
-        selectItem = i;
+        selectItem = $event;
       "
       v-for="(a, i) in data"
       :key="i"
       :data="a"
-      :selectItem="selectItem"
-      :modalStatus="modalStatus"
     />
   </div>
 </template>
