@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- modal -->
-    <div class="start" :class="{ end: modalStatus }">
+    <transition name="fade">
       <Modal
         @closeModal="modalStatus = false"
         :data="data"
         :selectItem="selectItem"
         :modalStatus="modalStatus"
       />
-    </div>
+    </transition>
 
     <!-- top nav -->
     <div class="menu">
@@ -105,12 +105,27 @@ div {
   margin-top: 40px;
 }
 
-.start {
+.fade-enter-from {
   opacity: 0;
+}
+
+.fade-enter-active {
   transition: all 1s;
 }
 
-.end {
+.fade-enter-to {
   opacity: 1;
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: all 1s;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
