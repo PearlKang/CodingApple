@@ -15,7 +15,7 @@
     <Card
       @openModal="
         modalStatus = true;
-        selectItem = $event;
+        selectItem = i;
       "
       v-for="(a, i) in data"
       :key="i"
