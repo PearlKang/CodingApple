@@ -21,6 +21,7 @@
 
     <!-- sort button -->
     <button @click="priceSort">가격순정렬</button>
+    <button @click="sortBack">되돌리기</button>
 
     <!-- main item lists -->
     <Card
@@ -45,6 +46,7 @@ export default {
   name: "App",
   data() {
     return {
+      defaultData: [...data],
       data,
       menus: ["Home", "Shop", "About"],
       modalStatus: false,
@@ -52,6 +54,9 @@ export default {
     };
   },
   methods: {
+    sortBack() {
+      this.data = [...this.defaultData];
+    },
     priceSort() {
       this.data.sort(function (a, b) {
         return a.price - b.price;
