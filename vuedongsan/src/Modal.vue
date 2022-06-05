@@ -23,13 +23,14 @@ export default {
   },
   watch: {
     month(input, before) {
+      if (isNaN(input) === true) {
+        alert("문자입력 금지");
+        this.month = 1;
+      }
+
       if (input >= 13) {
         alert("13이상 입력금지");
         this.month = before;
-      }
-      if (isNaN(input) == true) {
-        alert("문자입력 금지");
-        this.month = 1;
       }
     },
   },

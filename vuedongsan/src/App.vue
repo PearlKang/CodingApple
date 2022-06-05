@@ -1,12 +1,14 @@
 <template>
   <div>
     <!-- modal -->
-    <Modal
-      @closeModal="modalStatus = false"
-      :data="data"
-      :selectItem="selectItem"
-      :modalStatus="modalStatus"
-    />
+    <div class="start" :class="{ end: modalStatus }">
+      <Modal
+        @closeModal="modalStatus = false"
+        :data="data"
+        :selectItem="selectItem"
+        :modalStatus="modalStatus"
+      />
+    </div>
 
     <!-- top nav -->
     <div class="menu">
@@ -101,5 +103,14 @@ div {
 .room-img-madal {
   width: 50%;
   margin-top: 40px;
+}
+
+.start {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.end {
+  opacity: 1;
 }
 </style>
