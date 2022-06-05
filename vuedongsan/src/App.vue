@@ -13,12 +13,12 @@
 
     <!-- main item lists -->
     <Card
-      v-for="(a, i) in data"
-      :key="i"
       @openModal="
         modalStatus = true;
-        selectItem = id;
+        selectItem = $event;
       "
+      v-for="(a, i) in data"
+      :key="i"
       :data="a"
       :selectItem="selectItem"
       :modalStatus="modalStatus"
