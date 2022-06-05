@@ -3,6 +3,7 @@
     <!-- modal -->
     <transition name="fade">
       <Modal
+        v-if="modalStatus"
         @closeModal="modalStatus = false"
         :data="data"
         :selectItem="selectItem"
@@ -106,7 +107,7 @@ div {
 }
 
 .fade-enter-from {
-  opacity: 0;
+  transform: translateY(-1000px);
 }
 
 .fade-enter-active {
@@ -114,7 +115,7 @@ div {
 }
 
 .fade-enter-to {
-  opacity: 1;
+  transform: translateY(0px);
 }
 
 .fade-leave-from {
