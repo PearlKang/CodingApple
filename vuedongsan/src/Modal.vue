@@ -5,7 +5,7 @@
         <img :src="data[selectItem].image" class="room-img-madal" />
         <h4>{{ data[selectItem].title }}</h4>
         <p>{{ data[selectItem].content }}</p>
-        <input @input="month = $event.target.value" />
+        <input v-model.number="month" type="number" />
         <p>{{ month }}개월 선택함 : {{ data[selectItem].price * month }} 원</p>
         <button @click="clickCloseModal()">닫기</button>
       </div>
