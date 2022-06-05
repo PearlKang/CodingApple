@@ -15,6 +15,10 @@
     <Card
       v-for="(a, i) in data"
       :key="i"
+      @openModal="
+        modalStatus = true;
+        selectItem = id;
+      "
       :data="a"
       :selectItem="selectItem"
       :modalStatus="modalStatus"
