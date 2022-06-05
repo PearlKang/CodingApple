@@ -21,6 +21,9 @@
 
     <!-- sort button -->
     <button @click="priceSort">가격순정렬</button>
+    <button @click="priceReverseSort">가격역순정렬</button>
+    <button @click="priceStringSort">가나다순정렬</button>
+    <button @click="priceReverseStringSort">가나다역순정렬</button>
     <button @click="sortBack">되돌리기</button>
 
     <!-- main item lists -->
@@ -60,6 +63,21 @@ export default {
     priceSort() {
       this.data.sort(function (a, b) {
         return a.price - b.price;
+      });
+    },
+    priceReverseSort() {
+      this.data.sort(function (a, b) {
+        return b.price - a.price;
+      });
+    },
+    priceStringSort() {
+      this.data.sort(function (a, b) {
+        return a.title - b.title;
+      });
+    },
+    priceReverseStringSort() {
+      this.data.sort(function (a, b) {
+        return b.title - a.title;
       });
     },
   },
