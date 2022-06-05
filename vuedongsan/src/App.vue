@@ -17,13 +17,11 @@
     </div>
 
     <!-- banner -->
-    <Discount v-if="showDiscount == true" />
+    <Discount v-if="showDiscount == true" :amount="amount" />
 
     <!-- sort button -->
     <button @click="priceSort">가격순정렬</button>
     <button @click="priceReverseSort">가격역순정렬</button>
-    <!-- <button @click="priceStringSort">가나다순정렬</button>
-    <button @click="priceReverseStringSort">가나다역순정렬</button> -->
     <button @click="sortBack">되돌리기</button>
 
     <!-- main item lists -->
@@ -55,6 +53,7 @@ export default {
       modalStatus: false,
       selectItem: 0,
       showDiscount: true,
+      amount: 30,
     };
   },
   methods: {
@@ -71,21 +70,15 @@ export default {
         return b.price - a.price;
       });
     },
-    // priceStringSort() {
-    //   this.data.sort((a, b) => {
-    //     return a.title - b.title;
-    //   });
-    // },
-    // priceReverseStringSort() {
-    //   this.data.sort((a, b) => {
-    //     return b.title - a.title;
-    //   });
-    // },
   },
   mounted() {
-    setTimeout(() => {
-      this.showDiscount = false;
-    }, 2000);
+    setInterval(() => {
+      if (this.amount === 0) {
+        this.showDiscount = false;
+      } else {
+        this.amount--;
+      }
+    }, 1000);
   },
   components: { Discount, Modal, Card },
 };
