@@ -7,7 +7,7 @@
         <p>{{ data[selectItem].content }}</p>
         <input v-model.number="month" type="number" />
         <p>{{ month }}개월 선택함 : {{ data[selectItem].price * month }} 원</p>
-        <button @click="clickCloseModal()">닫기</button>
+        <button @click="clickCloseModal">닫기</button>
       </div>
     </div>
   </div>

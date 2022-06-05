@@ -19,6 +19,9 @@
     <!-- banner -->
     <Discount />
 
+    <!-- sort button -->
+    <button @click="priceSort">가격순정렬</button>
+
     <!-- main item lists -->
     <Card
       @openModal="
@@ -48,7 +51,13 @@ export default {
       selectItem: 0,
     };
   },
-  methods: {},
+  methods: {
+    priceSort() {
+      this.data.sort(function (a, b) {
+        return a.price - b.price;
+      });
+    },
+  },
   components: { Discount, Modal, Card },
 };
 </script>
