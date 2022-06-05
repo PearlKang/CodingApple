@@ -21,6 +21,18 @@ export default {
       month: 1,
     };
   },
+  watch: {
+    month(input, before) {
+      if (input >= 13) {
+        alert("13이상 입력금지");
+        this.month = before;
+      }
+      if (isNaN(input) == true) {
+        alert("문자입력 금지");
+        this.month = 1;
+      }
+    },
+  },
   props: {
     data: Array,
     selectItem: Number,
@@ -29,6 +41,7 @@ export default {
   methods: {
     clickCloseModal() {
       this.$emit("closeModal");
+      this.month = 1;
     },
   },
 };
