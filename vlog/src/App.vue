@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Vuelog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -55,13 +55,27 @@
       </div>
     </div>
   </nav>
-  <div>fdg<button type="button" class="btn btn-primary">Primary</button></div>
+
+  <div class="container mt-4">
+    <h5>React 개발자의 블로그입니다.</h5>
+    <p>- Vue로 만들었음 -</p>
+  </div>
+
+  <List v-for="(a, i) in data" :key="i" :data="a" />
 </template>
 
 <script>
+import data from "./assets/blog";
+import List from "./components/List";
+
 export default {
   name: "App",
-  components: {},
+  data() {
+    return {
+      data,
+    };
+  },
+  components: { List },
 };
 </script>
 
