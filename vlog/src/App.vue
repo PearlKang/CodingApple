@@ -56,17 +56,16 @@
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <h5>React 개발자의 블로그입니다.</h5>
-    <p>- Vue로 만들었음 -</p>
-  </div>
+  <router-link to="/">Home</router-link>&nbsp;
+  <router-link to="/list">List Page</router-link>
 
-  <List v-for="(a, i) in data" :key="i" :data="a" />
+  <router-view v-for="(a, i) in data" :key="i" :data="a"></router-view>
+  <!-- <List v-for="(a, i) in data" :key="i" :data="a" /> -->
 </template>
 
 <script>
 import data from "./assets/blog";
-import List from "./components/List";
+// import List from "./components/List";
 
 export default {
   name: "App",
@@ -75,7 +74,9 @@ export default {
       data,
     };
   },
-  components: { List },
+  components: {
+    // List,
+  },
 };
 </script>
 
