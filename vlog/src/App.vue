@@ -62,13 +62,10 @@
   <div class="m-5">
     <router-view :data="data"></router-view>
   </div>
-
-  <!-- <List v-for="(a, i) in data" :key="i" :data="a" /> -->
 </template>
 
 <script>
 import data from "./assets/blog";
-// import List from "./components/List";
 
 export default {
   name: "App",
@@ -77,9 +74,7 @@ export default {
       data,
     };
   },
-  components: {
-    // List,
-  },
+  components: {},
 };
 </script>
 
