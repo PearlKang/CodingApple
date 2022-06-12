@@ -9,7 +9,7 @@
 export default {
   name: "List",
   props: {
-    data: Object,
+    data: Array,
   },
 };
 </script>

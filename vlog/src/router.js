@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "./components/Home";
 import List from "./components/List";
 import Detail from "./components/Detail";
+import errorPage from "./components/404";
 
 const routes = [
   {
@@ -14,8 +15,12 @@ const routes = [
     component: List,
   },
   {
-    path: "/detail",
+    path: "/detail/:id(\\d+)",
     component: Detail,
+  },
+  {
+    path: "/:anything(.*)",
+    component: errorPage,
   },
 ];
 

@@ -1,13 +1,13 @@
 <template>
   <div class="container mt-4">
-    <h5>React 개발자의 블로그입니다.</h5>
-    <p>- Vue로 만들었음 -</p>
+    <h5>페이지를 찾을 수 없습니다.</h5>
+    <p>올바른 주소로 접속해주세요.</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "404",
 };
 </script>
 
