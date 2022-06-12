@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h5>{{ data.title }}</h5>
-    <p>{{ data.date }}</p>
+  <div v-for="(a, i) in data" :key="i">
+    <h5>{{ a.title }}</h5>
+    <p>{{ a.date }}</p>
   </div>
 </template>
 

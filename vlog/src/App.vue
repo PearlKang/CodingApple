@@ -59,7 +59,10 @@
   <router-link to="/">Home</router-link>&nbsp;
   <router-link to="/list">List Page</router-link>
 
-  <router-view v-for="(a, i) in data" :key="i" :data="a"></router-view>
+  <div class="m-5">
+    <router-view :data="data"></router-view>
+  </div>
+
   <!-- <List v-for="(a, i) in data" :key="i" :data="a" /> -->
 </template>
 
