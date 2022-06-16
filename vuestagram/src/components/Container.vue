@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Post :data="data[0]" />
-    <Post :data="data[1]" />
-    <Post :data="data[2]" />
+    <Post :data="a" v-for="(a, i) in data" :key="i" />
   </div>
 </template>
 
