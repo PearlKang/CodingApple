@@ -31,15 +31,17 @@ export default {
   data() {
     return {
       data,
+      moreCnt: 0,
     };
   },
   components: { Container },
   methods: {
     more() {
       axios
-        .get("https://codingapple1.github.io/vue/more0.json")
-        .then(function (result) {
-          console.log(result);
+        .get(`https://codingapple1.github.io/vue/more${this.moreCnt}.json`)
+        .then((result) => {
+          this.data.push(result.data);
+          this.moreCnt++;
         });
     },
   },
