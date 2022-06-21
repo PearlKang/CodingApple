@@ -51,5 +51,3 @@ export default {
 <style>
 @import "./styles/app-style.css";
 </style>
-<!-- https://codingapple1.github.io/vue/more0.json -->
-<!-- https://codingapple1.github.io/vue/more1.json -->
