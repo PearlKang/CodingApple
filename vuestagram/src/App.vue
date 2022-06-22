@@ -9,13 +9,20 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :data="data" :step="step" />
+  <Container :data="data" :step="step" :url="url" />
 
   <button @click="more">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
-      <input type="file" id="file" class="inputfile" />
+      <input
+        @change="upload"
+        multiple
+        accept="image/*"
+        type="file"
+        id="file"
+        class="inputfile"
+      />
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
@@ -44,6 +51,11 @@ export default {
           this.data.push(result.data);
           this.moreCnt++;
         });
+    },
+    upload(e) {
+      let file = e.target.files;
+      let url = URL.createObjectURL(file[0]);
+      this.step++;
     },
   },
 };

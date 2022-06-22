@@ -33,6 +33,7 @@ export default {
   props: {
     data: Array,
     step: Number,
+    url: String,
   },
 };
 </script>
