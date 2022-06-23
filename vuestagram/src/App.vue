@@ -40,6 +40,7 @@ export default {
       data,
       moreCnt: 0,
       step: 0,
+      url: "",
     };
   },
   components: { Container },
@@ -56,6 +57,7 @@ export default {
       let file = e.target.files;
       let url = URL.createObjectURL(file[0]);
       this.step++;
+      this.url = url;
     },
   },
 };
