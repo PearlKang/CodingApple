@@ -1,17 +1,18 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li>Cancel</li>
+      <li v-if="step >= 1" @click="step--">Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li>Next</li>
+      <li v-if="step === 1" @click="step++">Next</li>
+      <li v-if="step === 2" @click="publish">Publish</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :data="data" :step="step" :url="url" />
+  <Container @write="content = $event" :data="data" :step="step" :url="url" />
 
-  <button @click="more">더보기</button>
+  <button v-if="step === 0 && moreCnt <= 1" @click="more">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -23,7 +24,7 @@
         id="file"
         class="inputfile"
       />
-      <label for="file" class="input-plus">+</label>
+      <label v-if="step === 0" for="file" class="input-plus">+</label>
     </ul>
   </div>
 </template>
@@ -41,6 +42,7 @@ export default {
       moreCnt: 0,
       step: 0,
       url: "",
+      content: "",
     };
   },
   components: { Container },
@@ -58,6 +60,20 @@ export default {
       let url = URL.createObjectURL(file[0]);
       this.step++;
       this.url = url;
+    },
+    publish() {
+      let insertData = {
+        name: "Ben Kang",
+        userImage: this.url,
+        postImage: this.url,
+        likes: 0,
+        date: "May 15",
+        liked: false,
+        content: this.content,
+        filter: "perpetua",
+      };
+      this.data.unshift(insertData);
+      this.step = 0;
     },
   },
 };
