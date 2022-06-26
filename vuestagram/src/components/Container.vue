@@ -11,11 +11,13 @@
       ></div>
       <div class="filters">
         <FilterBox
-          v-for="a in filterData"
-          :key="a"
+          v-for="filter in filterData"
+          :key="filter"
           :url="url"
-          :a="a"
-        ></FilterBox>
+          :filter="filter"
+        >
+          {{ filter }}
+        </FilterBox>
       </div>
     </div>
 

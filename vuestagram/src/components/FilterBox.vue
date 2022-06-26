@@ -1,9 +1,11 @@
 <template>
   <div
     class="filter-item"
-    :class="`${a}`"
+    :class="`${filter}`"
     :style="{ backgroundImage: `url(${url})` }"
-  ></div>
+  >
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -11,7 +13,7 @@ export default {
   name: "FilterBox",
   props: {
     url: String,
-    a: String,
+    filter: String,
   },
 };
 </script>
