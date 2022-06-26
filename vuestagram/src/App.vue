@@ -10,7 +10,13 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container @write="content = $event" :data="data" :step="step" :url="url" />
+  <Container
+    @write="content = $event"
+    :postData="postData"
+    :filterData="filterData"
+    :step="step"
+    :url="url"
+  />
 
   <button v-if="step === 0 && moreCnt <= 1" @click="more">더보기</button>
 
@@ -30,7 +36,8 @@
 </template>
 
 <script>
-import data from "./data/data";
+import postData from "./data/postData";
+import filterData from "./data/filterData";
 import Container from "./components/Container";
 import axios from "axios";
 
@@ -38,7 +45,8 @@ export default {
   name: "App",
   data() {
     return {
-      data,
+      postData,
+      filterData,
       moreCnt: 0,
       step: 0,
       url: "",
@@ -51,7 +59,7 @@ export default {
       axios
         .get(`https://codingapple1.github.io/vue/more${this.moreCnt}.json`)
         .then((result) => {
-          this.data.push(result.data);
+          this.postData.push(result.data);
           this.moreCnt++;
         });
     },
@@ -72,7 +80,7 @@ export default {
         content: this.content,
         filter: "perpetua",
       };
-      this.data.unshift(insertData);
+      this.postData.unshift(insertData);
       this.step = 0;
     },
   },

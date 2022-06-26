@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="step == 0">
-      <Post :data="a" v-for="(a, i) in data" :key="i" />
+      <Post :postData="a" v-for="(a, i) in postData" :key="i" />
     </div>
 
     <div v-if="step == 1">
@@ -10,11 +10,12 @@
         :style="{ backgroundImage: `url(${url})` }"
       ></div>
       <div class="filters">
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
+        <FilterBox
+          v-for="a in filterData"
+          :key="a"
+          :url="url"
+          :a="a"
+        ></FilterBox>
       </div>
     </div>
 
@@ -37,14 +38,19 @@
 
 <script>
 import Post from "./Post";
+import FilterBox from "./FilterBox";
 
 export default {
   name: "Container",
-  components: { Post },
+  components: { Post, FilterBox },
   props: {
-    data: Array,
+    postData: Array,
+    filterData: Array,
     step: Number,
     url: String,
+  },
+  data() {
+    return {};
   },
 };
 </script>
