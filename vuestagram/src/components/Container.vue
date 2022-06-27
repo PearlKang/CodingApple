@@ -31,7 +31,7 @@
           @input="$emit('write', $event.target.value)"
           class="write-box"
         >
-          write!
+write!
         </textarea>
       </div>
     </div>
