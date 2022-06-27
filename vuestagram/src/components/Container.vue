@@ -51,9 +51,6 @@ export default {
     step: Number,
     url: String,
   },
-  data() {
-    return {};
-  },
 };
 </script>
 

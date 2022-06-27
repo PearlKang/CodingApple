@@ -21,7 +21,6 @@
 <script>
 export default {
   name: "Post",
-  components: {},
   props: {
     postData: Object,
   },
