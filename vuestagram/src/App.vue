@@ -16,6 +16,7 @@
     :filterData="filterData"
     :step="step"
     :url="url"
+    :selectFilter="selectFilter"
   />
 
   <button v-if="step === 0 && moreCnt <= 1" @click="more">더보기</button>
@@ -51,6 +52,7 @@ export default {
       step: 0,
       url: "",
       content: "",
+      selectFilter: "",
     };
   },
   components: { Container },
@@ -78,11 +80,16 @@ export default {
         date: "May 15",
         liked: false,
         content: this.content,
-        filter: "perpetua",
+        filter: this.selectFilter,
       };
       this.postData.unshift(insertData);
       this.step = 0;
     },
+  },
+  mounted() {
+    this.emitter.on("clickFilter", (data) => {
+      this.selectFilter = data;
+    });
   },
 };
 </script>

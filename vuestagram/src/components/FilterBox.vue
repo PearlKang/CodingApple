@@ -3,6 +3,7 @@
     class="filter-item"
     :class="`${filter}`"
     :style="{ backgroundImage: `url(${url})` }"
+    @click="clickSelectFilter"
   >
     <slot></slot>
   </div>
@@ -14,6 +15,11 @@ export default {
   props: {
     url: String,
     filter: String,
+  },
+  methods: {
+    clickSelectFilter() {
+      this.emitter.emit("clickFilter", this.filter);
+    },
   },
 };
 </script>
