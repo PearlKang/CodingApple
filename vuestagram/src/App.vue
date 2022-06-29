@@ -66,13 +66,14 @@ export default {
         });
     },
     upload(e) {
-      let file = e.target.files;
-      let url = URL.createObjectURL(file[0]);
+      const file = e.target.files;
+      const url = URL.createObjectURL(file[0]);
+
       this.step++;
       this.url = url;
     },
     publish() {
-      let insertData = {
+      const insertData = {
         name: "Ben Kang",
         userImage: this.url,
         postImage: this.url,
