@@ -1,7 +1,7 @@
 <template>
   <div
     class="filter-item"
-    :class="`${filter}`"
+    :class="filter"
     :style="{ backgroundImage: `url(${url})` }"
     @click="clickSelectFilter"
   >
