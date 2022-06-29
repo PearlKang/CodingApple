@@ -10,6 +10,9 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+  <h4>안녕 {{ $store.state.name }}</h4>
+  <button @click="$store.state.name = '이렇게 수정하지마.'">버튼</button>
+
   <Container
     @write="content = $event"
     :postData="postData"
