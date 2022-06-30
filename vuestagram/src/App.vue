@@ -11,7 +11,9 @@
   </div>
 
   <h4>안녕 {{ $store.state.name }}</h4>
-  <button @click="$store.state.name = '이렇게 수정하지마.'">버튼</button>
+  <button @click="$store.commit('changeName')">버튼</button>
+  <h4>{{ $store.state.age }}</h4>
+  <button @click="$store.commit('addAge', 10)">버튼</button>
 
   <Container
     @write="content = $event"
