@@ -18,6 +18,10 @@
   <p>{{ $store.state.more }}</p>
   <button @click="$store.dispatch('getData')">더보기버튼</button>
 
+  <p>{{ now() }} {{ cnt }}</p>
+  <p>{{ now2 }} {{ cnt }}</p>
+  <button @click="cnt++">버튼</button>
+
   <Container
     @write="content = $event"
     :postData="postData"
@@ -61,6 +65,7 @@ export default {
       url: "",
       content: "",
       selectFilter: "",
+      cnt: 0,
     };
   },
   components: { Container },
@@ -94,11 +99,19 @@ export default {
       this.postData.unshift(insertData);
       this.step = 0;
     },
+    now() {
+      return new Date();
+    },
   },
   mounted() {
     this.emitter.on("clickFilter", (data) => {
       this.selectFilter = data;
     });
+  },
+  computed: {
+    now2() {
+      return new Date();
+    },
   },
 };
 </script>
