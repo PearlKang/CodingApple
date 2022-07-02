@@ -11,9 +11,12 @@
   </div>
 
   <h4>안녕 {{ $store.state.name }}</h4>
-  <button @click="$store.commit('changeName')">버튼</button>
+  <h4>안녕 {{ name }}</h4>
+  <h4>안녕 {{ n }}</h4>
+  <button @click="changeName">버튼</button>
   <h4>{{ $store.state.age }}</h4>
-  <button @click="$store.commit('addAge', 10)">버튼</button>
+  <h4>{{ age }}</h4>
+  <button @click="addAge(10)">버튼</button>
 
   <p>{{ $store.state.more }}</p>
   <button @click="$store.dispatch('getData')">더보기버튼</button>
@@ -53,6 +56,7 @@ import postData from "./data/postData";
 import filterData from "./data/filterData";
 import Container from "./components/Container";
 import axios from "axios";
+import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
   name: "App",
@@ -102,6 +106,8 @@ export default {
     now() {
       return new Date();
     },
+    ...mapMutations(["changeName", "addAge"]),
+    ...mapActions([]),
   },
   mounted() {
     this.emitter.on("clickFilter", (data) => {
@@ -112,6 +118,14 @@ export default {
     now2() {
       return new Date();
     },
+    name() {
+      return this.$store.state.name;
+    },
+    // age() {
+    //   return this.$store.state.age;
+    // },
+    ...mapState(["name", "age", "likes"]),
+    ...mapState({ n: "name" }),
   },
 };
 </script>
