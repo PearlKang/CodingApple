@@ -15,6 +15,9 @@
   <h4>{{ $store.state.age }}</h4>
   <button @click="$store.commit('addAge', 10)">버튼</button>
 
+  <p>{{ $store.state.more }}</p>
+  <button @click="$store.dispatch('getData')">더보기버튼</button>
+
   <Container
     @write="content = $event"
     :postData="postData"
