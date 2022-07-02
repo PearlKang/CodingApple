@@ -6,6 +6,7 @@ const store = createStore({
       name: "ben",
       age: 20,
       likes: 0,
+      likeFlag: false,
     };
   },
   mutations: {
@@ -15,11 +16,13 @@ const store = createStore({
     addAge(state, data) {
       state.age += data;
     },
-    calcLike(state, flag) {
-      if (flag) {
+    calcLike(state) {
+      if (!state.likeFlag) {
         state.likes++;
+        state.likeFlag = true;
       } else {
         state.likes--;
+        state.likeFlag = false;
       }
     },
   },
