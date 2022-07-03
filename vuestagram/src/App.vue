@@ -1,29 +1,18 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li v-if="step >= 1" @click="step--">Cancel</li>
+      <li v-if="step == 1 || step == 2" @click="step--">Cancel</li>
     </ul>
     <ul class="header-button-right">
       <li v-if="step === 1" @click="step++">Next</li>
       <li v-if="step === 2" @click="publish">Publish</li>
     </ul>
-    <img src="./assets/logo.png" class="logo" />
+    <ul>
+      <li @click="step == 0 ? (step = 3) : (step = 0)">
+        <img src="./assets/logo.png" class="logo" />
+      </li>
+    </ul>
   </div>
-
-  <h4>안녕 {{ $store.state.name }}</h4>
-  <h4>안녕 {{ name }}</h4>
-  <h4>안녕 {{ n }}</h4>
-  <button @click="changeName">버튼</button>
-  <h4>{{ $store.state.age }}</h4>
-  <h4>{{ age }}</h4>
-  <button @click="addAge(10)">버튼</button>
-
-  <p>{{ $store.state.more }}</p>
-  <button @click="$store.dispatch('getData')">더보기버튼</button>
-
-  <p>{{ now() }} {{ cnt }}</p>
-  <p>{{ now2 }} {{ cnt }}</p>
-  <button @click="cnt++">버튼</button>
 
   <Container
     @write="content = $event"
@@ -65,7 +54,7 @@ export default {
       postData,
       filterData,
       moreCnt: 0,
-      step: 3,
+      step: 0,
       url: "",
       content: "",
       selectFilter: "",
