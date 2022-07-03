@@ -17,20 +17,22 @@ export default {
   name: "MyPage",
   setup() {
     let follower = ref([]);
+    let followerOriginal = ref([]);
+
+    onMounted(() => {
+      axios.get("/follower.json").then((a) => {
+        follower.value = a.data;
+        followerOriginal.value = [...a.data];
+      });
+    });
 
     function search(words) {
-      let newFollower = follower.value.filter((word) => {
+      let newFollower = followerOriginal.value.filter((word) => {
         return word.name.indexOf(words) != -1;
       });
 
       follower.value = [...newFollower];
     }
-
-    onMounted(() => {
-      axios.get("/follower.json").then((a) => {
-        follower.value = a.data;
-      });
-    });
 
     return { follower, search };
   },
