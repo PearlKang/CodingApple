@@ -11,33 +11,14 @@
 
 <script>
 import axios from "axios";
-import { computed, onMounted, reactive, ref, toRefs, watch } from "vue";
-import { useStore } from "vuex";
+import { onMounted, ref } from "vue";
 
 export default {
   name: "MyPage",
-  setup(props, context) {
+  setup() {
     let follower = ref([]);
-    let test = reactive({ name: "kang" });
 
-    test;
-    let propss = ref(props);
-
-    let { one } = toRefs(props);
-    console.log(one.value);
-
-    watch(one, () => {
-      console.log(one);
-    });
-
-    let result = computed(() => {
-      return follower.value.length;
-    });
-    console.log(result.value);
-
-    let store = useStore();
-    console.log(store.state.name);
-    console.log(store.commit());
+    function doThis() {}
 
     onMounted(() => {
       axios.get("/follower.json").then((a) => {
@@ -45,7 +26,7 @@ export default {
       });
     });
 
-    return { follower };
+    return { follower, doThis };
   },
   data() {
     return {};

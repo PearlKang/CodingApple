@@ -39,7 +39,7 @@ write!
     </div>
 
     <div v-if="step == 3">
-      <MyPage :one="1" />
+      <MyPage />
     </div>
   </div>
 </template>
