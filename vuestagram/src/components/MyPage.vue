@@ -1,7 +1,7 @@
 <template>
   <div style="padding: 10px">
     <h4>팔로워</h4>
-    <input placeholder="🔍" />
+    <input placeholder="🔍" @input="search($event.target.value)" />
     <div class="post-header" v-for="(a, i) in follower" :key="i">
       <div class="profile" :style="`background-image:url(${a.image})`"></div>
       <span class="profile-name">{{ a.name }}</span>
@@ -18,7 +18,13 @@ export default {
   setup() {
     let follower = ref([]);
 
-    function doThis() {}
+    function search(words) {
+      let newFollower = follower.value.filter((word) => {
+        return word.name.indexOf(words) != -1;
+      });
+
+      follower.value = [...newFollower];
+    }
 
     onMounted(() => {
       axios.get("/follower.json").then((a) => {
@@ -26,7 +32,7 @@ export default {
       });
     });
 
-    return { follower, doThis };
+    return { follower, search };
   },
   data() {
     return {};
