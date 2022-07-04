@@ -1,5 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
+  publicPath: "/vuestagram",
   transpileDependencies: true,
   lintOnSave: false,
   pwa: {
