@@ -74,3 +74,50 @@ let project: { member: string[]; days: number; started: boolean } = {
   days: 30,
   started: true,
 };
+
+let member4: number | string = 123;
+
+let members3: number[] = [1, 2, 3];
+let members4: (number | string)[] = [1, "2", 3];
+
+let object1: { a: string } = { a: "123" };
+let object2: { a: string | number } = { a: "123" };
+
+let name2: any;
+name2 = 123;
+name2 = [];
+
+let name3: unknown;
+// name3 - 1;
+name3 = 123;
+name3 = [];
+
+let tmp1: string = name2;
+// let tmp2: string = name3;
+
+let age2: string | number;
+// age2 + 1;
+
+let age3: unknown = 1;
+// age3 - 1;
+
+let user11: string = "kim";
+let age22: undefined | number = undefined;
+let married33: boolean = false;
+let benkang: (string | undefined | number | boolean)[] = [
+  user11,
+  age22,
+  married33,
+];
+
+let school: {
+  score: (number | boolean)[];
+  teacher: string;
+  friend: string | string[];
+} = {
+  score: [100, 97, 84],
+  teacher: "Phil",
+  friend: "John",
+};
+school.score[4] = false;
+school.friend = ["Lee", school.teacher];

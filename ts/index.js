@@ -48,3 +48,36 @@ var project = {
     days: 30,
     started: true,
 };
+var member4 = 123;
+var members3 = [1, 2, 3];
+var members4 = [1, "2", 3];
+var object1 = { a: "123" };
+var object2 = { a: "123" };
+var name2;
+name2 = 123;
+name2 = [];
+var name3;
+// name3 - 1;
+name3 = 123;
+name3 = [];
+var tmp1 = name2;
+// let tmp2: string = name3;
+var age2;
+// age2 + 1;
+var age3 = 1;
+// age3 - 1;
+var user11 = "kim";
+var age22 = undefined;
+var married33 = false;
+var benkang = [
+    user11,
+    age22,
+    married33,
+];
+var school = {
+    score: [100, 97, 84],
+    teacher: "Phil",
+    friend: "John",
+};
+school.score[4] = false;
+school.friend = ["Lee", school.teacher];
