@@ -161,3 +161,57 @@ function func7(x: number | string): number {
 function func8(x: number, y: boolean, z: string): string | void {
   if (x + (y ? 500 : 0) + (z == "상" ? 100 : 0) >= 600) return "결혼가능";
 }
+
+function func9(x: number | string): number | string {
+  if (typeof x === "string") {
+    return x + "1";
+  } else {
+    return x + 1;
+  }
+}
+
+function func10(x: number | string): void {
+  let array: number[] = [];
+
+  if (typeof x === "number") {
+    array[0] = x;
+  }
+}
+
+function func11(x: number | string): void {
+  let array: number[] = [];
+
+  array[0] = x as number;
+}
+
+function func12(x: (number | string)[]): number[] {
+  let output: number[] = [];
+
+  x.forEach((y) => {
+    if (typeof y === "string") {
+      output.push(parseFloat(y));
+    } else {
+      output.push(y);
+    }
+  });
+
+  return output;
+}
+console.log(func12([123, "123"]));
+
+let teacher1 = { subject: "math" };
+let teacher2 = { subject: ["science", "english"] };
+let teacher3 = { subject: ["science", "art", "korean"] };
+
+function func13(x: { subject: string | string[] }) {
+  if (typeof x.subject === "string") {
+    return x.subject;
+  } else if (Array.isArray(x.subject)) {
+    return x.subject[x.subject.length - 1];
+  } else {
+    return "empty";
+  }
+}
+console.log(func13(teacher1));
+console.log(func13(teacher2));
+console.log(func13(teacher3));

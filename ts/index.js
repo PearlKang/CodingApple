@@ -116,3 +116,51 @@ function func8(x, y, z) {
     if (x + (y ? 500 : 0) + (z == "상" ? 100 : 0) >= 600)
         return "결혼가능";
 }
+function func9(x) {
+    if (typeof x === "string") {
+        return x + "1";
+    }
+    else {
+        return x + 1;
+    }
+}
+function func10(x) {
+    var array = [];
+    if (typeof x === "number") {
+        array[0] = x;
+    }
+}
+function func11(x) {
+    var array = [];
+    array[0] = x;
+}
+function func12(x) {
+    var output = [];
+    x.forEach(function (y) {
+        if (typeof y === "string") {
+            output.push(parseFloat(y));
+        }
+        else {
+            output.push(y);
+        }
+    });
+    return output;
+}
+console.log(func12([123, "123"]));
+var teacher1 = { subject: "math" };
+var teacher2 = { subject: ["science", "english"] };
+var teacher3 = { subject: ["science", "art", "korean"] };
+function func13(x) {
+    if (typeof x.subject === "string") {
+        return x.subject;
+    }
+    else if (Array.isArray(x.subject)) {
+        return x.subject[x.subject.length - 1];
+    }
+    else {
+        return "empty";
+    }
+}
+console.log(func13(teacher1));
+console.log(func13(teacher2));
+console.log(func13(teacher3));
