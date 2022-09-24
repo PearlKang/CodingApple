@@ -81,3 +81,38 @@ var school = {
 };
 school.score[4] = false;
 school.friend = ["Lee", school.teacher];
+function func2(x) {
+    return x * 2;
+}
+func2(3);
+// x:number | undefined
+function func3(x) {
+    1 + 1;
+    //   return 1 + 1;
+}
+function func4(x) {
+    //   console.log(x + 3);
+}
+func4(2);
+function func5(x) {
+    if (x)
+        console.log("안녕하세요 " + x);
+    else
+        console.log("이름이 없습니다.");
+}
+function func6(x) {
+    var num = 0;
+    while (true) {
+        num = num / 10;
+        if (num == 0)
+            break;
+    }
+    return num;
+}
+function func7(x) {
+    return x.toString().length;
+}
+function func8(x, y, z) {
+    if (x + (y ? 500 : 0) + (z == "상" ? 100 : 0) >= 600)
+        return "결혼가능";
+}

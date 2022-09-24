@@ -121,3 +121,43 @@ let school: {
 };
 school.score[4] = false;
 school.friend = ["Lee", school.teacher];
+
+function func2(x: number): number {
+  return x * 2;
+}
+func2(3);
+
+// x:number | undefined
+function func3(x?: number): void {
+  1 + 1;
+  //   return 1 + 1;
+}
+
+function func4(x: number | string): void {
+  //   console.log(x + 3);
+}
+func4(2);
+
+function func5(x?: string): void {
+  if (x) console.log("안녕하세요 " + x);
+  else console.log("이름이 없습니다.");
+}
+
+function func6(x: number): number {
+  let num: number = 0;
+
+  while (true) {
+    num = num / 10;
+    if (num == 0) break;
+  }
+
+  return num;
+}
+
+function func7(x: number | string): number {
+  return x.toString().length;
+}
+
+function func8(x: number, y: boolean, z: string): string | void {
+  if (x + (y ? 500 : 0) + (z == "상" ? 100 : 0) >= 600) return "결혼가능";
+}
