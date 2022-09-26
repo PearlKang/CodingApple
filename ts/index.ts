@@ -215,3 +215,81 @@ function func13(x: { subject: string | string[] }) {
 console.log(func13(teacher1));
 console.log(func13(teacher2));
 console.log(func13(teacher3));
+
+let animal1: string | number | undefined;
+
+type Animal1 = string | number | undefined;
+let animal2: Animal1 = "kim";
+
+let animal3: { name: string; age: number } = { name: "kim", age: 20 };
+
+type AnimalType = { name: string; age: number };
+let animal4: AnimalType = { name: "kim", age: 20 };
+
+const hometown1 = "seoul";
+const hometown2 = { region: "seoul" };
+hometown2.region = "busan";
+
+const girlfriend1 = {
+  name: "ember",
+};
+girlfriend1.name = "yura";
+
+type GirlfriendType1 = {
+  readonly name: string;
+};
+const girlfriend2: GirlfriendType1 = {
+  name: "ember",
+};
+// girlfriend2.name = "yura";
+
+type GirlfriendType2 = {
+  // ? = property | undefined
+  name?: string;
+};
+const girlfriend3: GirlfriendType2 = {
+  name: "ember",
+};
+girlfriend3.name = "yura";
+
+type Name1 = string;
+type Age1 = number;
+type Person1 = Name1 | Age1;
+
+type PositionX = {
+  x: number;
+};
+type PositionY = {
+  y: number;
+};
+type Position = PositionX & PositionY;
+// x:number,y:number
+
+let position1: Position = { x: 10, y: 20 };
+
+type HomeworkPositionX = { x: number; y: number };
+type HomeworkPositionY = { y: number; z: number };
+type HomeworkPositionZ = { z: number; x: number };
+type HomeworkPosition = HomeworkPositionX &
+  HomeworkPositionY &
+  HomeworkPositionZ;
+let position2: HomeworkPosition = { x: 10, y: 20, z: 30 };
+
+type Homework1 = { color?: string; size: number; readonly position: number[] };
+let homeworkTest1: Homework1 = { size: 1, position: [1, 2, 3, 4, 5] };
+
+type Homework2 = { name: string; phone: number; email: string };
+let homeworkTest2: Homework2 = {
+  name: "kim",
+  phone: 1012345678,
+  email: "test@test.com",
+};
+
+type Homework3 = { adult: boolean };
+type Homework4 = Homework2 & Homework3;
+let homeworkTest3 = {
+  name: "kim",
+  phone: 123456789,
+  email: "test@test.com",
+  adult: true,
+};

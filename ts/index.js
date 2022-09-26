@@ -164,3 +164,36 @@ function func13(x) {
 console.log(func13(teacher1));
 console.log(func13(teacher2));
 console.log(func13(teacher3));
+var animal1;
+var animal2 = "kim";
+var animal3 = { name: "kim", age: 20 };
+var animal4 = { name: "kim", age: 20 };
+var hometown1 = "seoul";
+var hometown2 = { region: "seoul" };
+hometown2.region = "busan";
+var girlfriend1 = {
+    name: "ember",
+};
+girlfriend1.name = "yura";
+var girlfriend2 = {
+    name: "ember",
+};
+var girlfriend3 = {
+    name: "ember",
+};
+girlfriend3.name = "yura";
+// x:number,y:number
+var position1 = { x: 10, y: 20 };
+var position2 = { x: 10, y: 20, z: 30 };
+var homeworkTest1 = { size: 1, position: [1, 2, 3, 4, 5] };
+var homeworkTest2 = {
+    name: "kim",
+    phone: 1012345678,
+    email: "test@test.com",
+};
+var homeworkTest3 = {
+    name: "kim",
+    phone: 123456789,
+    email: "test@test.com",
+    adult: true,
+};
