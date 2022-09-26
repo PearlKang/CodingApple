@@ -197,3 +197,31 @@ var homeworkTest3 = {
     email: "test@test.com",
     adult: true,
 };
+var name4;
+var name5;
+var me1;
+function func14(a) {
+    return 0;
+}
+function func15(a) {
+    if (a === "rock") {
+        return ["rock"];
+    }
+    else if (a === "paper") {
+        return ["paper"];
+    }
+    else if (a === "scissors") {
+        return ["scissors"];
+    }
+    else {
+        return ["rock", "paper", "scissors"];
+    }
+}
+var input1 = "kim";
+var content1 = {
+    name: "kim",
+    //   readonly name: "kim",
+};
+function myFunc(a) { }
+// myFunc(content1.name);
+myFunc(content1.name);

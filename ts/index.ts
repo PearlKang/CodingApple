@@ -293,3 +293,36 @@ let homeworkTest3 = {
   email: "test@test.com",
   adult: true,
 };
+
+let name4: string;
+let name5: "kim";
+let me1: "bald" | "solo";
+
+function func14(a: "hello"): 1 | 0 {
+  return 0;
+}
+
+function func15(
+  a: "rock" | "paper" | "scissors"
+): ("rock" | "paper" | "scissors")[] {
+  if (a === "rock") {
+    return ["rock"];
+  } else if (a === "paper") {
+    return ["paper"];
+  } else if (a === "scissors") {
+    return ["scissors"];
+  } else {
+    return ["rock", "paper", "scissors"];
+  }
+}
+
+const input1 = "kim";
+
+var content1 = {
+  name: "kim",
+  //   readonly name: "kim",
+} as const;
+
+function myFunc(a: "kim") {}
+// myFunc(content1.name);
+myFunc(content1.name);
