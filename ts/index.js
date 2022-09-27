@@ -225,3 +225,35 @@ var content1 = {
 function myFunc(a) { }
 // myFunc(content1.name);
 myFunc(content1.name);
+function func16(a) {
+    return 1;
+}
+var func17 = function (a) {
+    return 10;
+};
+var member5 = {
+    name: "kim",
+    plusOne: function (a) {
+        return a + 1;
+    },
+    changeName: function () { },
+};
+member5.plusOne(2);
+function func18(a) {
+    a();
+}
+function func19() { }
+func18(func19());
+var cutZero = function (a) { return a.replace("O", ""); };
+var removeDash = function (a) { return parseFloat(a.replace("-", "")); };
+var phoneNumber = function (a, cutZero, removeDash) {
+    var cuttingZero = cutZero(a);
+    var removingDash = removeDash(cuttingZero);
+    return removingDash;
+};
+function makeFunc(a, func1, func2) {
+    var result = func1(a);
+    var result2 = func2(result);
+    console.log(result2);
+}
+makeFunc("010-1234-5678", cutZero, removeDash);

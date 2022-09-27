@@ -326,3 +326,57 @@ var content1 = {
 function myFunc(a: "kim") {}
 // myFunc(content1.name);
 myFunc(content1.name);
+
+function func16(a: string): number {
+  return 1;
+}
+
+type FuncType1 = (a: string) => number;
+
+let func17: FuncType1 = function (a) {
+  return 10;
+};
+
+type Member4 = {
+  name: string;
+  plusOne: (a: number) => number;
+  changeName: () => void;
+};
+
+let member5: Member4 = {
+  name: "kim",
+  plusOne(a) {
+    return a + 1;
+  },
+  changeName: () => {},
+};
+member5.plusOne(2);
+
+function func18(a) {
+  a();
+}
+function func19() {}
+func18(func19());
+
+type CutZero = (a: string) => string;
+type RemoveDash = (a: string) => number;
+let cutZero: CutZero = (a) => a.replace("O", "");
+let removeDash: RemoveDash = (a) => parseFloat(a.replace("-", ""));
+
+type PhoneNumber = (a: string, b: CutZero, c: RemoveDash) => number;
+
+let phoneNumber: PhoneNumber = (a, cutZero, removeDash) => {
+  let cuttingZero: string = cutZero(a);
+  let removingDash: number = removeDash(cuttingZero);
+  return removingDash;
+};
+
+type funcType2 = (a: string) => string;
+type funcType3 = (a: string) => number;
+
+function makeFunc(a: string, func1: funcType2, func2: funcType3) {
+  let result = func1(a);
+  let result2 = func2(result);
+  console.log(result2);
+}
+makeFunc("010-1234-5678", cutZero, removeDash);
