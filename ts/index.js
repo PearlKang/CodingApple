@@ -257,3 +257,29 @@ function makeFunc(a, func1, func2) {
     console.log(result2);
 }
 makeFunc("010-1234-5678", cutZero, removeDash);
+var title2 = document.querySelector("#title");
+if (title2 != null)
+    title2.innerHTML = "hi";
+if (title2 instanceof Element)
+    title2.innerHTML = "hi";
+var title3 = document.querySelector("#title");
+title3.innerHTML = "hi";
+var title4 = document.querySelector("#title");
+if ((title4 === null || title4 === void 0 ? void 0 : title4.innerHTML) != undefined)
+    title4.innerHTML = "hi";
+var link1 = document.querySelector(".link");
+if (link1 instanceof HTMLAnchorElement)
+    link1.href = "https://kakao.com";
+var button1 = document.querySelector("#button");
+button1 === null || button1 === void 0 ? void 0 : button1.addEventListener("click", function () { });
+var img1 = document.querySelector("#image");
+if (img1 instanceof HTMLImageElement)
+    img1.src = "new.jpg";
+var a1 = document.querySelector(".naver");
+if (a1 instanceof HTMLAnchorElement)
+    a1.href = "https://kakao.com";
+var a2 = document.querySelectorAll(".naver");
+a2.forEach(function (a) {
+    if (a instanceof HTMLAnchorElement)
+        a.href = "https://kakao.com";
+});

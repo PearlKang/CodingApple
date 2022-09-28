@@ -380,3 +380,30 @@ function makeFunc(a: string, func1: funcType2, func2: funcType3) {
   console.log(result2);
 }
 makeFunc("010-1234-5678", cutZero, removeDash);
+
+let title2 = document.querySelector("#title");
+if (title2 != null) title2.innerHTML = "hi";
+if (title2 instanceof Element) title2.innerHTML = "hi";
+
+let title3 = document.querySelector("#title") as Element;
+title3.innerHTML = "hi";
+
+let title4 = document.querySelector("#title");
+if (title4?.innerHTML != undefined) title4.innerHTML = "hi";
+
+let link1 = document.querySelector(".link");
+if (link1 instanceof HTMLAnchorElement) link1.href = "https://kakao.com";
+
+let button1 = document.querySelector("#button");
+button1?.addEventListener("click", function () {});
+
+let img1 = document.querySelector("#image");
+if (img1 instanceof HTMLImageElement) img1.src = "new.jpg";
+
+let a1 = document.querySelector(".naver");
+if (a1 instanceof HTMLAnchorElement) a1.href = "https://kakao.com";
+
+let a2 = document.querySelectorAll(".naver");
+a2.forEach((a) => {
+  if (a instanceof HTMLAnchorElement) a.href = "https://kakao.com";
+});
