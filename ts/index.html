@@ -14,6 +14,35 @@
     <a href="naver.com" class="naver">링크</a>
     <a href="naver.com" class="naver">링크</a>
     <a href="naver.com" class="naver">링크</a>
+
+    <script>
+      var a = { name: "kim" };
+
+      //   var nunu = {
+      //     q: "consume",
+      //     w: "snowball",
+      //   };
+      //   var garen = {
+      //     q: "strike",
+      //     w: "courage",
+      //   };
+
+      function machine(a, b) {
+        this.q = a;
+        this.w = b;
+      }
+      var nunu1 = new machine("consume", "snowball");
+      var garen1 = new machine("strike", "courage");
+
+      class Hero {
+        constructor(a, b) {
+          this.q = a;
+          this.w = b;
+        }
+      }
+      var nunu2 = new Hero("consume", "snowball");
+      var garen2 = new Hero("strike", "courage");
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
