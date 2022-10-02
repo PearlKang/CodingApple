@@ -327,3 +327,29 @@ var Word = /** @class */ (function () {
 var obj1 = new Word("kim", 3, 5, "park");
 console.log(obj1.num);
 console.log(obj1.str);
+var square1 = {
+    color: "red",
+    width: 100,
+};
+var student1 = { name: "kim" };
+var teacher4 = { name: "kim", age: 20 };
+var student2 = { name: "kim" };
+var teacher5 = { name: "kim", age: 20 };
+var product1 = {
+    brand: "Samsung",
+    serialNumber: 1360,
+    model: ["TV", "phone"],
+};
+var cart1 = [
+    { product: "청소기", price: 7000 },
+    { product: "삼다수", price: 800 },
+];
+var cart2 = { product: "청소기", price: 7000, card: false };
+var obj2 = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    },
+};

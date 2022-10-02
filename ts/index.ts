@@ -467,3 +467,90 @@ class Word {
 let obj1 = new Word("kim", 3, 5, "park");
 console.log(obj1.num);
 console.log(obj1.str);
+
+// type typeName = string;
+// interface
+
+type Square1 = {
+  color: string;
+  width: number;
+};
+
+let square1: Square1 = {
+  color: "red",
+  width: 100,
+};
+
+interface Square2 {
+  color: string;
+  width: number;
+}
+
+interface Student1 {
+  name: string;
+}
+// interface Student1 {
+//   score: number;
+// }
+interface Teacher1 {
+  name: string;
+  age: number;
+}
+let student1: Student1 = { name: "kim" };
+let teacher4: Teacher1 = { name: "kim", age: 20 };
+
+interface Teacher2 extends Student1 {
+  age: number;
+  //   name: number;
+}
+let student2: Student1 = { name: "kim" };
+let teacher5: Teacher2 = { name: "kim", age: 20 };
+
+type Animal2 = { name: string };
+// type Animal2 = { name: string };
+type Cat1 = { age: number } & Animal2;
+type Cat2 = { name: number } & Animal2;
+
+// let cat1: Cat2 = { name: "kim" };
+
+interface Product1 {
+  brand: string;
+  serialNumber: number;
+  model: string[];
+}
+
+let product1: Product1 = {
+  brand: "Samsung",
+  serialNumber: 1360,
+  model: ["TV", "phone"],
+};
+
+interface Cart1 {
+  product: string;
+  price: number;
+}
+
+let cart1: Cart1[] = [
+  { product: "청소기", price: 7000 },
+  { product: "삼다수", price: 800 },
+];
+
+interface Cart2 extends Cart1 {
+  card: boolean;
+}
+
+let cart2: Cart2 = { product: "청소기", price: 7000, card: false };
+
+interface MathObj1 {
+  plus: (a: number, b: number) => number;
+  minus: (a: number, b: number) => number;
+}
+
+let obj2: MathObj1 = {
+  plus(a, b) {
+    return a + b;
+  },
+  minus(a, b) {
+    return a - b;
+  },
+};
