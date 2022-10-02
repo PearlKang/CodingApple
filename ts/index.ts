@@ -351,13 +351,13 @@ let member5: Member4 = {
   changeName: () => {},
 };
 member5.plusOne(2);
-
+/*
 function func18(a) {
   a();
 }
 function func19() {}
 func18(func19());
-
+*/
 type CutZero = (a: string) => string;
 type RemoveDash = (a: string) => number;
 let cutZero: CutZero = (a) => a.replace("O", "");
@@ -407,3 +407,63 @@ let a2 = document.querySelectorAll(".naver");
 a2.forEach((a) => {
   if (a instanceof HTMLAnchorElement) a.href = "https://kakao.com";
 });
+
+class Person2 {
+  //data: number = 0;
+  //data = 0;
+  name: string;
+  constructor(a: string) {
+    this.name = a;
+  }
+  func(a: string) {
+    console.log("hi" + a);
+  }
+}
+// Person2.prototype.func = function () {};
+
+let people1 = new Person2("kim");
+let people2 = new Person2("park");
+
+class Car1 {
+  model: string;
+  price: number;
+
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+
+  tax(): number {
+    return this.price / 10;
+  }
+}
+
+let car1 = new Car1("소나타", 3000);
+
+console.log(car1);
+console.log(car1.tax());
+
+class Word {
+  num: number[];
+  str: string[];
+
+  constructor(...param) {
+    let numbers: number[] = [];
+    let strings: string[] = [];
+
+    param.forEach((i) => {
+      if (typeof i === "string") {
+        strings.push(i);
+      } else {
+        numbers.push(i);
+      }
+    });
+
+    this.num = numbers;
+    this.str = strings;
+  }
+}
+
+let obj1 = new Word("kim", 3, 5, "park");
+console.log(obj1.num);
+console.log(obj1.str);

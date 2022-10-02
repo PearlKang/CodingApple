@@ -239,11 +239,6 @@ var member5 = {
     changeName: function () { },
 };
 member5.plusOne(2);
-function func18(a) {
-    a();
-}
-function func19() { }
-func18(func19());
 var cutZero = function (a) { return a.replace("O", ""); };
 var removeDash = function (a) { return parseFloat(a.replace("-", "")); };
 var phoneNumber = function (a, cutZero, removeDash) {
@@ -283,3 +278,52 @@ a2.forEach(function (a) {
     if (a instanceof HTMLAnchorElement)
         a.href = "https://kakao.com";
 });
+var Person2 = /** @class */ (function () {
+    function Person2(a) {
+        this.name = a;
+    }
+    Person2.prototype.func = function (a) {
+        console.log("hi" + a);
+    };
+    return Person2;
+}());
+// Person2.prototype.func = function () {};
+var people1 = new Person2("kim");
+var people2 = new Person2("park");
+var Car1 = /** @class */ (function () {
+    function Car1(model, price) {
+        this.model = model;
+        this.price = price;
+    }
+    Car1.prototype.tax = function () {
+        return this.price / 10;
+    };
+    return Car1;
+}());
+var car1 = new Car1("소나타", 3000);
+console.log(car1);
+console.log(car1.tax());
+var Word = /** @class */ (function () {
+    function Word() {
+        var param = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            param[_i] = arguments[_i];
+        }
+        var numbers = [];
+        var strings = [];
+        param.forEach(function (i) {
+            if (typeof i === "string") {
+                strings.push(i);
+            }
+            else {
+                numbers.push(i);
+            }
+        });
+        this.num = numbers;
+        this.str = strings;
+    }
+    return Word;
+}());
+var obj1 = new Word("kim", 3, 5, "park");
+console.log(obj1.num);
+console.log(obj1.str);
