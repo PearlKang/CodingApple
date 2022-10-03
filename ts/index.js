@@ -426,3 +426,25 @@ function func26(_a) {
     console.log(a, b, c);
 }
 func26([40, "wine", false]);
+function func27(a) { }
+function func28(a) {
+    //   if (typeof a === "string") {
+    //   } else {
+    //   }
+    if (a && typeof a === "string") {
+    }
+}
+function func29(animal) {
+    if ("swim" in animal) {
+        animal.swim;
+    }
+}
+// 오브젝트 instanceof 부모class
+var date1 = new Date();
+if (date1 instanceof Date) {
+}
+function func30(x) {
+    if (x.wheel === "4개") {
+        console.log("x는 Car타입이에요.");
+    }
+}

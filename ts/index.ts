@@ -623,3 +623,43 @@ function func26([a, b, c]: FuncType5) {
   console.log(a, b, c);
 }
 func26([40, "wine", false]);
+
+function func27(a?: string) {}
+function func28(a: string | undefined) {
+  //   if (typeof a === "string") {
+  //   } else {
+  //   }
+  if (a && typeof a === "string") {
+  }
+}
+
+type Fish = { swim: string };
+type Bird = { fly: string };
+
+function func29(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    animal.swim;
+  }
+}
+
+// 오브젝트 instanceof 부모class
+
+let date1 = new Date();
+
+if (date1 instanceof Date) {
+}
+
+type Car2 = {
+  wheel: "4개";
+  color: string;
+};
+type Bike1 = {
+  wheel: "2개";
+  color: string;
+};
+
+function func30(x: Car2 | Bike1) {
+  if (x.wheel === "4개") {
+    console.log("x는 Car타입이에요.");
+  }
+}
