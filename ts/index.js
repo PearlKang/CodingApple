@@ -1,3 +1,12 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var nameStr1 = "kim";
 var nameStrArray1 = ["kim", "park"];
 var nameObject1 = { name: "kim" };
@@ -353,3 +362,67 @@ var obj2 = {
         return a - b;
     },
 };
+//rest parameter : 입력이 몇개가 들어올지 모를때,
+function func20(num) {
+    var a = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        a[_i - 1] = arguments[_i];
+    }
+    console.log(a);
+}
+func20(1, 2, 3, 5, 4, 5, 6);
+function func21() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    console.log(a);
+}
+func21(1, 2, 3, 5, 4, 5, 6);
+// spread operator
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5];
+// 1,2,3,4,5
+var arr3 = __spreadArray(__spreadArray([], arr1, true), arr2, true);
+var arr4 = ["안녕", 100];
+var arr5 = arr4[0];
+var arr6 = arr4[1];
+var _a = ["안녕", 100], arr7 = _a[0], arr8 = _a[1];
+// let { student: student, age: age } = { student: true, age: 20 };
+var _b = { student: true, age: 20 }, student = _b.student, age = _b.age;
+var obj3 = { student: true, age: 20 };
+function func22(a, b) {
+    console.log(a, b);
+}
+func22(1, 2);
+func22(obj3.student, obj3.age);
+function func23(_a) {
+    var student = _a.student, age = _a.age;
+    console.log(student, age);
+}
+func23({ student: true, age: 20 });
+func23(obj3);
+function func24() {
+    var input = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        input[_i] = arguments[_i];
+    }
+    var maxNum = -1;
+    input.forEach(function (i) {
+        if (maxNum < i) {
+            maxNum = i;
+        }
+    });
+    return maxNum;
+}
+console.log(func24(1, 3, 2, 4, 5, 6, 7, 8));
+function func25(_a) {
+    var user = _a.user, comment = _a.comment, admin = _a.admin;
+    console.log(user, comment, admin);
+}
+func25({ user: "kim", comment: [3, 5, 4], admin: false });
+function func26(_a) {
+    var a = _a[0], b = _a[1], c = _a[2];
+    console.log(a, b, c);
+}
+func26([40, "wine", false]);

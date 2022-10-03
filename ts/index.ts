@@ -554,3 +554,72 @@ let obj2: MathObj1 = {
     return a - b;
   },
 };
+
+//rest parameter : 입력이 몇개가 들어올지 모를때,
+function func20(num, ...a) {
+  console.log(a);
+}
+func20(1, 2, 3, 5, 4, 5, 6);
+
+function func21(...a: number[]) {
+  console.log(a);
+}
+func21(1, 2, 3, 5, 4, 5, 6);
+
+// spread operator
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5];
+// 1,2,3,4,5
+let arr3 = [...arr1, ...arr2];
+
+let arr4 = ["안녕", 100];
+let arr5 = arr4[0];
+let arr6 = arr4[1];
+
+let [arr7, arr8] = ["안녕", 100];
+
+// let { student: student, age: age } = { student: true, age: 20 };
+let { student, age } = { student: true, age: 20 };
+
+let obj3 = { student: true, age: 20 };
+
+function func22(a, b) {
+  console.log(a, b);
+}
+func22(1, 2);
+func22(obj3.student, obj3.age);
+
+function func23({ student, age }: { student: boolean; age: number }) {
+  console.log(student, age);
+}
+func23({ student: true, age: 20 });
+func23(obj3);
+
+function func24(...input: number[]): number {
+  let maxNum = -1;
+
+  input.forEach((i) => {
+    if (maxNum < i) {
+      maxNum = i;
+    }
+  });
+
+  return maxNum;
+}
+console.log(func24(1, 3, 2, 4, 5, 6, 7, 8));
+
+type FuncType4 = {
+  user: string;
+  comment: number[];
+  admin: boolean;
+};
+function func25({ user, comment, admin }: FuncType4) {
+  console.log(user, comment, admin);
+}
+func25({ user: "kim", comment: [3, 5, 4], admin: false });
+
+type FuncType5 = (number | string | boolean)[];
+function func26([a, b, c]: FuncType5) {
+  console.log(a, b, c);
+}
+func26([40, "wine", false]);
