@@ -448,3 +448,22 @@ function func30(x) {
         console.log("x는 Car타입이에요.");
     }
 }
+// void
+// function func31(): never {
+//   // return 1;
+//   // return undefined;
+//   // throw new Error();
+//   while (true) {}
+// }
+function func31(parameter) {
+    if (typeof parameter === "string") {
+        console.log(parameter);
+    }
+    else {
+        console.log(parameter);
+    }
+}
+// never -> void
+// let func32 = function () {
+//   throw new Error();
+// };
