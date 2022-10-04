@@ -467,3 +467,34 @@ function func31(parameter) {
 // let func32 = function () {
 //   throw new Error();
 // };
+var User1 = /** @class */ (function () {
+    function User1(a) {
+        this.familyName = "kim";
+        // this.name = a;
+        this.name = a + this.familyName;
+    }
+    //   public func() {}
+    User1.prototype.changeFamilyName = function () {
+        this.familyName = "park";
+    };
+    return User1;
+}());
+new User1("kim");
+var user2 = new User1("park");
+// user2.name = "hi";
+var user3 = new User1("민수");
+console.log(user3);
+user3.changeFamilyName();
+console.log(user3);
+var Person3 = /** @class */ (function () {
+    //   name: string;
+    //   constructor() {
+    //     this.name = "kim";
+    //   }
+    function Person3(name) {
+        this.name = name;
+    }
+    return Person3;
+}());
+var person1 = new Person3("kim");
+console.log(person1);

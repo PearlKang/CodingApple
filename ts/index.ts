@@ -684,3 +684,43 @@ function func31(parameter: string) {
 // let func32 = function () {
 //   throw new Error();
 // };
+
+class User1 {
+  //   name = "kim";
+  //   name: string = "kim";
+  //   public name: string = "kim";
+  //   private name: string = "kim";
+
+  name: string;
+  private familyName: string = "kim";
+
+  constructor(a: string) {
+    // this.name = a;
+    this.name = a + this.familyName;
+  }
+  //   public func() {}
+
+  changeFamilyName() {
+    this.familyName = "park";
+  }
+}
+new User1("kim");
+
+let user2 = new User1("park");
+// user2.name = "hi";
+let user3 = new User1("민수");
+console.log(user3);
+user3.changeFamilyName();
+console.log(user3);
+
+class Person3 {
+  //   name: string;
+  //   constructor() {
+  //     this.name = "kim";
+  //   }
+
+  constructor(public name: string) {}
+}
+
+let person1 = new Person3("kim");
+console.log(person1);
