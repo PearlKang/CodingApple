@@ -724,3 +724,82 @@ class Person3 {
 
 let person1 = new Person3("kim");
 console.log(person1);
+
+class User2 {
+  x = 10;
+}
+
+class NewUser1 extends User2 {}
+
+let person2 = new NewUser1();
+console.log(person2);
+
+class User3 {
+  //   private x = 10;
+  protected x = 10;
+}
+
+class NewUser2 extends User3 {
+  //   x = 20;
+  doThis() {
+    this.x = 20;
+  }
+}
+
+class User4 {
+  static x = 10;
+  //   public static x = 10;
+  //   private static x = 10;
+  y = 20;
+}
+
+let children1 = new User4();
+// console.log(User4.x, User4.y);
+console.log(User4.x);
+// console.log(children1.x, children1.y);
+console.log(children1.y);
+
+class User5 {
+  static skill = "js";
+  intro = User5.skill + " 전문가입니다.";
+}
+
+let Chulsu1 = new User5();
+console.log(Chulsu1);
+
+User5.skill = "ts";
+
+let Chulsu2 = new User5();
+console.log(Chulsu2);
+
+class User6 {
+  private static x = 10;
+  public static y = 20;
+  protected z = 30;
+}
+
+class User7 {
+  private static x = 10;
+  public static y = 20;
+
+  addOne(num: number) {
+    User7.x = User7.x + num;
+  }
+
+  printX() {
+    console.log(User7.x);
+  }
+}
+User7.addOne(3);
+User7.addOne(4);
+User7.printX();
+
+class Square3() {
+
+}
+
+let square2 = new Square3(30, 30, "red");
+square2.draw();
+square2.draw();
+square2.draw();
+square2.draw();

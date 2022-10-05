@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -498,3 +513,98 @@ var Person3 = /** @class */ (function () {
 }());
 var person1 = new Person3("kim");
 console.log(person1);
+var User2 = /** @class */ (function () {
+    function User2() {
+        this.x = 10;
+    }
+    return User2;
+}());
+var NewUser1 = /** @class */ (function (_super) {
+    __extends(NewUser1, _super);
+    function NewUser1() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return NewUser1;
+}(User2));
+var person2 = new NewUser1();
+console.log(person2);
+var User3 = /** @class */ (function () {
+    function User3() {
+        //   private x = 10;
+        this.x = 10;
+    }
+    return User3;
+}());
+var NewUser2 = /** @class */ (function (_super) {
+    __extends(NewUser2, _super);
+    function NewUser2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    //   x = 20;
+    NewUser2.prototype.doThis = function () {
+        this.x = 20;
+    };
+    return NewUser2;
+}(User3));
+var User4 = /** @class */ (function () {
+    function User4() {
+        //   public static x = 10;
+        //   private static x = 10;
+        this.y = 20;
+    }
+    User4.x = 10;
+    return User4;
+}());
+var children1 = new User4();
+// console.log(User4.x, User4.y);
+console.log(User4.x);
+// console.log(children1.x, children1.y);
+console.log(children1.y);
+var User5 = /** @class */ (function () {
+    function User5() {
+        this.intro = User5.skill + " 전문가입니다.";
+    }
+    User5.skill = "js";
+    return User5;
+}());
+var Chulsu1 = new User5();
+console.log(Chulsu1);
+User5.skill = "ts";
+var Chulsu2 = new User5();
+console.log(Chulsu2);
+var User6 = /** @class */ (function () {
+    function User6() {
+        this.z = 30;
+    }
+    User6.x = 10;
+    User6.y = 20;
+    return User6;
+}());
+var User7 = /** @class */ (function () {
+    function User7() {
+    }
+    User7.prototype.addOne = function (num) {
+        User7.x = User7.x + num;
+    };
+    User7.prototype.printX = function () {
+        console.log(User7.x);
+    };
+    User7.x = 10;
+    User7.y = 20;
+    return User7;
+}());
+User7.addOne(3);
+User7.addOne(4);
+User7.printX();
+var Square3 = /** @class */ (function () {
+    function Square3() {
+    }
+    return Square3;
+}());
+(function () {
+});
+var square2 = new Square3(30, 30, "red");
+square2.draw();
+square2.draw();
+square2.draw();
+square2.draw();
