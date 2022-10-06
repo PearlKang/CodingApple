@@ -583,10 +583,10 @@ var User6 = /** @class */ (function () {
 var User7 = /** @class */ (function () {
     function User7() {
     }
-    User7.prototype.addOne = function (num) {
-        User7.x = User7.x + num;
+    User7.addOne = function (num) {
+        User7.x += num;
     };
-    User7.prototype.printX = function () {
+    User7.printX = function () {
         console.log(User7.x);
     };
     User7.x = 10;
@@ -597,12 +597,18 @@ User7.addOne(3);
 User7.addOne(4);
 User7.printX();
 var Square3 = /** @class */ (function () {
-    function Square3() {
+    function Square3(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
     }
+    Square3.prototype.draw = function () {
+        var a = Math.random();
+        var square = "<div style=\"position:relative;\n    top:".concat(a * 400, "px;\n    left:").concat(a * 400, "px;\n    width:").concat(this.width, "px;\n    height:").concat(this.height, "px;\n    background:").concat(this.color, "\"></div>");
+        document.body.insertAdjacentHTML("beforeend", square);
+    };
     return Square3;
 }());
-(function () {
-});
 var square2 = new Square3(30, 30, "red");
 square2.draw();
 square2.draw();

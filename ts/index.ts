@@ -782,11 +782,11 @@ class User7 {
   private static x = 10;
   public static y = 20;
 
-  addOne(num: number) {
-    User7.x = User7.x + num;
+  static addOne(num: number) {
+    User7.x += num;
   }
 
-  printX() {
+  static printX() {
     console.log(User7.x);
   }
 }
@@ -794,8 +794,22 @@ User7.addOne(3);
 User7.addOne(4);
 User7.printX();
 
-class Square3() {
-
+class Square3 {
+  constructor(
+    public width: number,
+    public height: number,
+    public color: string
+  ) {}
+  draw() {
+    let a = Math.random();
+    let square = `<div style="position:relative;
+    top:${a * 400}px;
+    left:${a * 400}px;
+    width:${this.width}px;
+    height:${this.height}px;
+    background:${this.color}"></div>`;
+    document.body.insertAdjacentHTML("beforeend", square);
+  }
 }
 
 let square2 = new Square3(30, 30, "red");
