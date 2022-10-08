@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22,6 +23,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var nameStr1 = "kim";
 var nameStrArray1 = ["kim", "park"];
 var nameObject1 = { name: "kim" };
@@ -614,3 +616,13 @@ square2.draw();
 square2.draw();
 square2.draw();
 square2.draw();
+var a_1 = require("./a");
+console.log(a_1.name6);
+var name7 = "park";
+var car2 = { wheel: 4, model: "Sonata" };
+var func33 = function (a) {
+    console.log(a);
+};
+func33({ abc: "hi" });
+var dog1 = "bark";
+var dog2 = { name: "paw" };

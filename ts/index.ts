@@ -817,3 +817,35 @@ square2.draw();
 square2.draw();
 square2.draw();
 square2.draw();
+
+import { name6, age4, Name2 } from "./a";
+
+console.log(name6);
+
+let name7: Name2 = "park";
+
+//예전 import
+// ///<reference  path="./a.ts" />
+
+import { Car3, Bike2 } from "./a";
+
+let car2: Car3 = { wheel: 4, model: "Sonata" };
+
+import { ObjFunction1 } from "./a";
+
+let func33: ObjFunction1 = function (a) {
+  console.log(a);
+};
+func33({ abc: "hi" });
+
+namespace GoodDog {
+  export type Dog = string;
+}
+namespace BadDog {
+  export interface Dog {
+    name: string;
+  }
+}
+
+let dog1: GoodDog.Dog = "bark";
+let dog2: BadDog.Dog = { name: "paw" };
