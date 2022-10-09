@@ -849,3 +849,43 @@ namespace BadDog {
 
 let dog1: GoodDog.Dog = "bark";
 let dog2: BadDog.Dog = { name: "paw" };
+
+function func34(x: unknown[]) {
+  return x[0];
+}
+
+let a3 = func34([4, 2]);
+console.log(a3);
+// console.log(a3 + 1);
+
+function func35<MyType>(x: MyType[]): MyType {
+  return x[0];
+}
+let a4 = func35<number>([4, 2]);
+// let a4 = func35([4, 2]);
+let a5 = func35<string>(["4", "2"]);
+// let a5 = func35(["4", "2"]);
+console.log(a4 + 1);
+console.log(a5);
+
+function func36<MyType extends number>(x: MyType) {
+  return x - 1;
+}
+
+let a6 = func36<number>(100);
+
+function func37<MyType extends string>(x: MyType) {
+  return x.length;
+}
+
+let a7 = func37<string>("100");
+
+interface LengthCheck {
+  length: number;
+}
+
+function func38<MyType extends LengthCheck>(x: MyType) {
+  return x.length;
+}
+
+let a8 = func38<string[]>(["100"]);

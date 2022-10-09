@@ -27,12 +27,3 @@ export interface Bike2 {
 }
 
 export type ObjFunction1 = (a?: object) => void;
-
-namespace GoodDog {
-  export type Dog = string;
-}
-namespace BadDog {
-  export interface Dog {
-    name: string;
-  }
-}

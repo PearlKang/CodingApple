@@ -626,3 +626,30 @@ var func33 = function (a) {
 func33({ abc: "hi" });
 var dog1 = "bark";
 var dog2 = { name: "paw" };
+function func34(x) {
+    return x[0];
+}
+var a3 = func34([4, 2]);
+console.log(a3);
+// console.log(a3 + 1);
+function func35(x) {
+    return x[0];
+}
+var a4 = func35([4, 2]);
+// let a4 = func35([4, 2]);
+var a5 = func35(["4", "2"]);
+// let a5 = func35(["4", "2"]);
+console.log(a4 + 1);
+console.log(a5);
+function func36(x) {
+    return x - 1;
+}
+var a6 = func36(100);
+function func37(x) {
+    return x.length;
+}
+var a7 = func37("100");
+function func38(x) {
+    return x.length;
+}
+var a8 = func38(["100"]);
