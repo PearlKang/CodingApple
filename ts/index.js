@@ -738,3 +738,4 @@ function func43() {
     });
     return result;
 }
+console.log(dataA + 1);

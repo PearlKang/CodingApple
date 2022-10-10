@@ -977,3 +977,7 @@ function func43(...rest: (string | number)[]) {
 
   return result;
 }
+
+declare let dataA: number;
+
+console.log(dataA + 1);
