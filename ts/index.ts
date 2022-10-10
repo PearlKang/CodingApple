@@ -889,3 +889,91 @@ function func38<MyType extends LengthCheck>(x: MyType) {
 }
 
 let a8 = func38<string[]>(["100"]);
+
+function homework5<Type extends string | string[]>(x: Type) {
+  console.log(x.length);
+}
+homework5<string>("hello");
+homework5<string[]>(["kim", "park"]);
+
+interface Animal3 {
+  name: string;
+  age: number;
+}
+
+let data1 = '{"name":"dog","age":1}';
+
+function homework6(x: string) {
+  return JSON.parse(x);
+}
+let result3 = homework6(data1);
+console.log(result3);
+
+function homework7<T>(x: string): T {
+  return JSON.parse(x);
+}
+let result4 = homework7<Animal3>(data1);
+console.log(result4);
+
+class Person4<T> {
+  name;
+  constructor(a: T) {
+    this.name = a;
+  }
+}
+let a9 = new Person4<string>("어쩌구");
+a9.name;
+
+let dogSound1: (string | boolean)[] = ["dog", true];
+let dogSound2: [string, boolean] = ["dog", true];
+// let dogSound3: [string, boolean?, number] = ["dog", true];
+let dogSound3: [string, boolean, number?] = ["dog", true];
+
+function func39(...x: number[]) {
+  console.log(x);
+}
+func39(1, 2, 3, 6, 5, 4, 7, 8, 9);
+
+function func40(...x: [number, string]) {
+  console.log(x);
+}
+func40(1, "2");
+
+function func41(a: number, b: string) {
+  console.log([a, b]);
+}
+func41(1, "2");
+
+let arr9 = [1, 2, 3];
+let arr10: [number, number, ...number[]] = [4, 5, ...arr9]; //[4,5,1,2,3]
+
+let food1: [string, number, boolean] = ["동서녹차", 4000, true];
+let food2: [string, number, ...boolean[]] = [
+  "동서녹차",
+  4000,
+  true,
+  false,
+  true,
+  true,
+  false,
+  true,
+];
+type Arr1 = [string, number, ...boolean[]];
+let food3: Arr1 = ["동서녹차", 4000, true, false, true, true, false, true];
+
+function func42(...rest: [string, boolean, ...(number | string)[]]) {}
+func42("a", true, 6, 3, "1", 4);
+
+function func43(...rest: (string | number)[]) {
+  let result: [string[], number[]] = [[], []];
+
+  rest.forEach((a) => {
+    if (typeof a === "string") {
+      result[0].push(a);
+    } else {
+      result[1].push(a);
+    }
+  });
+
+  return result;
+}

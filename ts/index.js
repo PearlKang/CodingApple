@@ -653,3 +653,88 @@ function func38(x) {
     return x.length;
 }
 var a8 = func38(["100"]);
+function homework5(x) {
+    console.log(x.length);
+}
+homework5("hello");
+homework5(["kim", "park"]);
+var data1 = '{"name":"dog","age":1}';
+function homework6(x) {
+    return JSON.parse(x);
+}
+var result3 = homework6(data1);
+console.log(result3);
+function homework7(x) {
+    return JSON.parse(x);
+}
+var result4 = homework7(data1);
+console.log(result4);
+var Person4 = /** @class */ (function () {
+    function Person4(a) {
+        this.name = a;
+    }
+    return Person4;
+}());
+var a9 = new Person4("어쩌구");
+a9.name;
+var dogSound1 = ["dog", true];
+var dogSound2 = ["dog", true];
+// let dogSound3: [string, boolean?, number] = ["dog", true];
+var dogSound3 = ["dog", true];
+function func39() {
+    var x = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        x[_i] = arguments[_i];
+    }
+    console.log(x);
+}
+func39(1, 2, 3, 6, 5, 4, 7, 8, 9);
+function func40() {
+    var x = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        x[_i] = arguments[_i];
+    }
+    console.log(x);
+}
+func40(1, "2");
+function func41(a, b) {
+    console.log([a, b]);
+}
+func41(1, "2");
+var arr9 = [1, 2, 3];
+var arr10 = __spreadArray([4, 5], arr9, true); //[4,5,1,2,3]
+var food1 = ["동서녹차", 4000, true];
+var food2 = [
+    "동서녹차",
+    4000,
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+];
+var food3 = ["동서녹차", 4000, true, false, true, true, false, true];
+function func42() {
+    var rest = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        rest[_i] = arguments[_i];
+    }
+}
+func42("a", true, 6, 3, "1", 4);
+function func43() {
+    var rest = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        rest[_i] = arguments[_i];
+    }
+    var result = [[], []];
+    rest.forEach(function (a) {
+        if (typeof a === "string") {
+            result[0].push(a);
+        }
+        else {
+            result[1].push(a);
+        }
+    });
+    return result;
+}
