@@ -738,4 +738,15 @@ function func43() {
     });
     return result;
 }
+/*
+declare let dataA: number;
+
 console.log(dataA + 1);
+*/
+/*
+import { dataA } from "./data";
+*/
+/*
+console.log(dataTest);
+*/
+var dog3 = "kim";

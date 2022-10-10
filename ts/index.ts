@@ -977,7 +977,18 @@ function func43(...rest: (string | number)[]) {
 
   return result;
 }
-
+/*
 declare let dataA: number;
 
 console.log(dataA + 1);
+*/
+
+/*
+import { dataA } from "./data";
+*/
+
+/*
+console.log(dataTest);
+*/
+
+let dog3: Dog = "kim";
