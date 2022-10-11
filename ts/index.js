@@ -750,3 +750,7 @@ import { dataA } from "./data";
 console.log(dataTest);
 */
 var dog3 = "kim";
+// import { Age } from "./types/common/test";
+var age5;
+var name8 = "kim";
+var age6 = 30;

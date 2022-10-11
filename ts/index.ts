@@ -992,3 +992,12 @@ console.log(dataTest);
 */
 
 let dog3: Dog = "kim";
+
+// import { Age } from "./types/common/test";
+
+let age5: Age;
+
+let name8: string = "kim";
+type Age2 = number;
+
+let age6: Age = 30;
