@@ -1001,3 +1001,36 @@ let name8: string = "kim";
 type Age2 = number;
 
 let age6: Age = 30;
+
+class Car4 {
+  model: string;
+  price: number = 1000;
+  constructor(a: string) {
+    this.model = a;
+  }
+}
+let myCar1 = new Car4("morning");
+
+interface CarType1 {
+  model: string;
+  price: number;
+}
+class Car5 implements CarType1 {
+  model: string;
+  price: number = 1000;
+  constructor(a: string) {
+    this.model = a;
+  }
+}
+let myCar2 = new Car5("morning");
+
+interface CarType2 {
+  model: string;
+  tax: (price: number) => number;
+}
+class Car6 implements CarType2 {
+  model: string;
+  tax(a) {
+    return a * 0.1;
+  }
+}

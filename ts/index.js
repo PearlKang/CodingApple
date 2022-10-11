@@ -754,3 +754,27 @@ var dog3 = "kim";
 var age5;
 var name8 = "kim";
 var age6 = 30;
+var Car4 = /** @class */ (function () {
+    function Car4(a) {
+        this.price = 1000;
+        this.model = a;
+    }
+    return Car4;
+}());
+var myCar1 = new Car4("morning");
+var Car5 = /** @class */ (function () {
+    function Car5(a) {
+        this.price = 1000;
+        this.model = a;
+    }
+    return Car5;
+}());
+var myCar2 = new Car5("morning");
+var Car6 = /** @class */ (function () {
+    function Car6() {
+    }
+    Car6.prototype.tax = function (a) {
+        return a * 0.1;
+    };
+    return Car6;
+}());
