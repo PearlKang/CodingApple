@@ -1086,3 +1086,30 @@ type TypeChanger3<MyType, T> = {
 };
 
 type NewBus2 = TypeChanger3<Bus1, boolean>;
+
+type Age3<T> = T;
+
+let a10: Age3<string>;
+
+type Age4<T> = T extends string ? string : unknown;
+
+let a11: Age4<string>;
+let a12: Age4<number>;
+
+// type FirstItem1<T> = T extends ? []:any;
+
+type Person7<T> = T extends string ? string : unknown;
+type Person8<T> = T extends string ? T : unknown;
+type Person9<T> = T extends infer R ? string : unknown; // R = return type
+type Person10<T> = T extends infer R ? R : unknown;
+
+type a13 = Person10<string>;
+
+type TypeSelector1<T> = T extends (infer R)[] ? R : unknown;
+
+type a14 = TypeSelector1<string[]>;
+
+type TypeSelector2<T> = T extends () => infer R ? R : unknown;
+
+type a15 = TypeSelector2<() => void>;
+type a16 = ReturnType<() => void>;

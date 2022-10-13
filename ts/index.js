@@ -784,3 +784,6 @@ Object.keys(obj4);
 var person3 = "name";
 // let person3: PersonKeys1 = "age";
 var person4 = "name";
+var a10;
+var a11;
+var a12;
