@@ -1123,3 +1123,78 @@ let age26: Age5<[boolean, number]>;
 
 type TypeSelector3<T> = T extends (x: infer R) => any ? R : any;
 type a17 = TypeSelector3<(x: number) => void>;
+
+interface StringOnly1 {
+  name: string;
+  age: string;
+  location: string;
+}
+
+let user12: StringOnly1 = {
+  name: "kim",
+  age: "20",
+  location: "seoul",
+};
+
+interface StringOnly2 {
+  [key: string]: string;
+}
+
+let user13: StringOnly2 = {
+  name: "kim",
+  age: "20",
+  location: "seoul",
+};
+
+interface StringOnly3 {
+  age: number;
+  // age: "20";
+  [key: string]: string | number;
+}
+
+let user14: StringOnly3 = {
+  name: "kim",
+  age: 20,
+  location: "seoul",
+};
+
+interface StringOnly4 {
+  [key: number]: string;
+  // [key: string]: string;
+}
+
+let user15: StringOnly4 = {
+  0: "kim",
+  1: "20",
+  2: "seoul",
+};
+
+user15[0];
+
+interface MyType1 {
+  "font-size": {
+    "font-size": {
+      "font-size": number;
+    };
+  };
+}
+
+let css1: MyType1 = {
+  "font-size": {
+    "font-size": {
+      "font-size": 14,
+    },
+  },
+};
+
+interface MyType2 {
+  "font-size": MyType2 | number;
+}
+
+let css2: MyType2 = {
+  "font-size": {
+    "font-size": {
+      "font-size": 14,
+    },
+  },
+};

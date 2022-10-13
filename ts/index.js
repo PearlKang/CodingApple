@@ -791,3 +791,38 @@ var age23;
 var age24;
 var age25;
 var age26;
+var user12 = {
+    name: "kim",
+    age: "20",
+    location: "seoul",
+};
+var user13 = {
+    name: "kim",
+    age: "20",
+    location: "seoul",
+};
+var user14 = {
+    name: "kim",
+    age: 20,
+    location: "seoul",
+};
+var user15 = {
+    0: "kim",
+    1: "20",
+    2: "seoul",
+};
+user15[0];
+var css1 = {
+    "font-size": {
+        "font-size": {
+            "font-size": 14,
+        },
+    },
+};
+var css2 = {
+    "font-size": {
+        "font-size": {
+            "font-size": 14,
+        },
+    },
+};
