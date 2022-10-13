@@ -826,3 +826,21 @@ var css2 = {
         },
     },
 };
+var obj5 = {
+    model: "k5",
+    brand: "kia",
+    price: 6000,
+    year: 2030,
+    date: "6",
+    percent: "5%",
+    dealer: "kim",
+};
+var obj6 = {
+    "font-size": 10,
+    secondary: {
+        "font-size": 12,
+        third: {
+            "font-size": 14,
+        },
+    },
+};
