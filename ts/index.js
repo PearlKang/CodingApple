@@ -787,3 +787,7 @@ var person4 = "name";
 var a10;
 var a11;
 var a12;
+var age23;
+var age24;
+var age25;
+var age26;

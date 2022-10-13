@@ -1096,7 +1096,10 @@ type Age4<T> = T extends string ? string : unknown;
 let a11: Age4<string>;
 let a12: Age4<number>;
 
-// type FirstItem1<T> = T extends ? []:any;
+type FirstItem1<T> = T extends any[] ? T[0] : any;
+
+let age23: FirstItem1<string[]>;
+let age24: FirstItem1<number>;
 
 type Person7<T> = T extends string ? string : unknown;
 type Person8<T> = T extends string ? T : unknown;
@@ -1113,3 +1116,10 @@ type TypeSelector2<T> = T extends () => infer R ? R : unknown;
 
 type a15 = TypeSelector2<() => void>;
 type a16 = ReturnType<() => void>;
+
+type Age5<T> = T extends [string, ...any] ? T[0] : unknown;
+let age25: Age5<[string, number]>;
+let age26: Age5<[boolean, number]>;
+
+type TypeSelector3<T> = T extends (x: infer R) => any ? R : any;
+type a17 = TypeSelector3<(x: number) => void>;
