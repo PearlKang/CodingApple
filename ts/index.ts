@@ -1068,3 +1068,21 @@ type TypeChanger1<MyType> = {
 };
 
 type NewCar1 = TypeChanger1<Car7>;
+
+type TypeChanger2<T> = {
+  [key in keyof T]: string | number;
+};
+
+type Bus1 = {
+  color: string;
+  model: boolean;
+  price: number;
+};
+
+type NewBus1 = TypeChanger2<Bus1>;
+
+type TypeChanger3<MyType, T> = {
+  [key in keyof MyType]: T;
+};
+
+type NewBus2 = TypeChanger3<Bus1, boolean>;
