@@ -778,3 +778,9 @@ var Car6 = /** @class */ (function () {
     };
     return Car6;
 }());
+var obj4 = { name: "kim", age: 20 };
+Object.keys(obj4);
+// let person3: PersonKeys1 = "age";
+var person3 = "name";
+// let person3: PersonKeys1 = "age";
+var person4 = "name";

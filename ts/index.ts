@@ -1034,3 +1034,37 @@ class Car6 implements CarType2 {
     return a * 0.1;
   }
 }
+
+let obj4 = { name: "kim", age: 20 };
+Object.keys(obj4);
+
+interface Person5 {
+  age: number;
+  name: string;
+}
+
+type PersonKeys1 = keyof Person5;
+
+// let person3: PersonKeys1 = "age";
+let person3: PersonKeys1 = "name";
+
+interface Person6 {
+  [key: string]: number;
+}
+
+type PersonKeys2 = keyof Person6;
+
+// let person3: PersonKeys1 = "age";
+let person4: PersonKeys2 = "name";
+
+type Car7 = {
+  color: boolean;
+  model: boolean;
+  price: boolean | number;
+};
+
+type TypeChanger1<MyType> = {
+  [key in keyof MyType]: string;
+};
+
+type NewCar1 = TypeChanger1<Car7>;
