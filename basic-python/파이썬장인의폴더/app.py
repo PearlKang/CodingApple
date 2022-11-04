@@ -48,3 +48,19 @@ print(중고차4["brand"])
 
 중고차4["brand"]=1234
 print(중고차4["brand"])
+
+# if 조건식 :
+#     조건식이 참일때 실행할 코드 (indent(tab) 필요함)
+
+재고량=10
+
+if 재고량>0:
+    print("지금주문가능합니다.")
+
+중고차재고=["K5","BMW","Tico"]
+
+if "K5" in 중고차재고:
+    print("지금주문가능합니다.")
+# elif
+else:
+    print("주문불가능함 ㅅㄱ")
