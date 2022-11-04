@@ -64,3 +64,18 @@ if "K5" in 중고차재고:
 # elif
 else:
     print("주문불가능함 ㅅㄱ")
+
+
+# print("K5 있어요")
+print("BMW 있어요")
+print("BMW 있어요")
+print("BMW 있어요")
+print("BMW 있어요")
+
+for i in range(0,10):
+    print("BMW 있어요")
+
+중고차들=["K5","BMW","Tico"]
+
+for i in 중고차들:
+    print(i)
