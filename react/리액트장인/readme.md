@@ -1,1 +1,3 @@
 sudo npx create-react-app 프로젝트명
+
+npm start
